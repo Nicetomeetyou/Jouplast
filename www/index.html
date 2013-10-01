@@ -8,50 +8,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+			
 		<link rel="stylesheet" type="text/css" href="css/icons.css" />
-
-		<!--   
-		<link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
-		-->
 		<link rel="stylesheet" type="text/css" href="css/src/main.css"  />
 		<link rel="stylesheet" type="text/css" href="css/src/appframework.css"  />
-
 		<link rel="stylesheet" type="text/css" href="css/src/badges.css"  />
 		<link rel="stylesheet" type="text/css" href="css/src/buttons.css"  />
 		<link rel="stylesheet" type="text/css" href="css/src/lists.css"  />
 		<link rel="stylesheet" type="text/css" href="css/src/forms.css"  />
 		<link rel="stylesheet" type="text/css" href="css/src/grid.css"  />
-		
 		<link rel="stylesheet" type="text/css" href="css/index.css"  />
-
 		<link rel="stylesheet" type="text/css" href="plugins/css/af.actionsheet.css"  />
 		<link rel="stylesheet" type="text/css" href="plugins/css/af.popup.css"  />
 		<link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  />
-	  
-     <!-- uncomment for AppMobi apps <script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script>
-<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script>
--->
+		
         <script type="text/javascript" charset="utf-8" src="./appframework.js"></script>
-        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+		
         <script>
 			
-            function loadedPanel(what) {
-                //We are going to set the badge as the number of li elements inside the target
-                $.ui.updateBadge("#aflink", $("#af").find("li").length);
-            }
-
-
-            function unloadedPanel(what) {
-                console.log("unloaded " + what.id);
-            }
-
+            function loadedPanel(what) { $.ui.updateBadge("#aflink", $("#af").find("li").length); }
+            function unloadedPanel(what) { console.log("unloaded " + what.id); }
+			
             if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
                 var script = document.createElement("script");
                 script.src = "plugins/af.desktopBrowsers.js";
                 var tag = $("head").append(script);
             }
-	
         </script>
+		
 		<script type="text/javascript" charset="utf-8" src="plugins/af.actionsheet.js"></script>
 		<script type="text/javascript" charset="utf-8" src="plugins/af.css3animate.js"></script>
 		<script type="text/javascript" charset="utf-8" src="plugins/af.passwordBox.js"></script>
@@ -60,43 +44,24 @@
 		<script type="text/javascript" charset="utf-8" src="plugins/af.touchEvents.js"></script>
 		<script type="text/javascript" charset="utf-8" src="plugins/af.touchLayer.js"></script>
 		<script type="text/javascript" charset="utf-8" src="plugins/af.popup.js"></script>
-		
 		<script type="text/javascript" charset="utf-8" src="plugins/af.carousel.js"></script>
-		
         <script type="text/javascript" charset="utf-8" src="ui/src/appframework.ui.js"></script>
         <script type="text/javascript" charset="utf-8" src="ui/transitions/all.js"></script>
         <script type="text/javascript" charset="utf-8" src="plugins/af.slidemenu.js"></script>
-		
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script src="GAPlugin.js"></script>
 		
         <script type="text/javascript">
-
+			/* ---------------------------------------------------------------------------------------- */
 			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
 			
-			/* ---------------------------------------------------------------------------------------- */
 			var gaPlugin;
-
-
 			function permissionCallback (button) {
-			if (button === 1)
-				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
+				if (button === 1) gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
 			}
-
-			function nativePluginResultHandler (result) {
-			//alert('nativePluginResultHandler - '+result);
-				console.log('nativePluginResultHandler: '+result);
-
-			}
-
-			function nativePluginErrorHandler (error) {
-			//alert('nativePluginErrorHandler - '+error);
-				console.log('nativePluginErrorHandler: '+error);
-			}
-
-			function goingAway() {
-				gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);
-			}
+			
+			function nativePluginResultHandler (result) { console.log('nativePluginResultHandler: '+result); }
+			function nativePluginErrorHandler (error) {	console.log('nativePluginErrorHandler: '+error); }
+			function goingAway() { gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler); }
 			/* ---------------------------------------------------------------------------------------- */
 			
             var tabNomProduit;
@@ -173,15 +138,9 @@
 										, new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
 										, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
 										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "-", "-", "-"), new Array("2000", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"));
-			
-			/* This function runs once the page is loaded, but appMobi is not yet active */
-            //$.ui.animateHeaders=false;
+										
             var search=document.location.search.toLowerCase().replace("?","");
-             //if(!search)
-                //$.os.useOSThemes=false;
-                
-            if(search) //Android fix has too many buggy issues on iOS - can't preview with $.os.android
-            {
+            if(search) {
                $.os.useOSThemes=true;
                 if(search=="win8")
                     $.os.ie=true;
@@ -191,11 +150,8 @@
             }
             
             var webRoot = "./";
-            // $.os.android=true;
             $.ui.autoLaunch = true;
             $.ui.openLinksNewTab = false;
-			//$.ui.removeFooterMenu();
-            //$.ui.resetScrollers=false;
             
 			tabFicheTitle = tabFicheTitle_fr;
 			tabNomProduit = tabNomProduit_fr;
@@ -206,37 +162,21 @@
 			$.ui.backButtonText="Retour";
 			$.feat.nativeTouchScroll=false;
 			
-				function initialize() {
-					console.log("Init");
-					 
-				}
-			
-			
-			
-            $(window).load(function(){
-				/*var language = navigator.language.split("-");
-				var language_root = (language[0]);
-				
-				tabNomProduit = window["tabNomProduit_" + language_root];
-				tabFicheTitle = window["tabFicheTitle_" + language_root];*/
-            });
+			function initialize() {
+				console.log("Init");
+			}
             
-            /* This code is used to run as soon as appMobi activates */
             function onDeviceReady() {
                 AppMobi.device.setRotateOrientation("portrait");
                 AppMobi.device.setAutoRotate(false);
                 webRoot = AppMobi.webRoot + "";
-                //hide splash screen
+				
                 AppMobi.device.hideSplashScreen();
                 $.ui.blockPageScroll(); 
 				
-				console.log("Ready -> Device");
-				
 				gaPlugin = window.plugins.gaPlugin;
 				navigator.notification.confirm('GA_PLUGIN would like your permission to collect usage data. No personal or user identifiable data will be collected.', permissionCallback, 'Attention', 'Allow,Deny');//block the page from scrolling at the header/footer
-				
             };
-            //document.addEventListener("appMobi.device.ready", onDeviceReady, false);
 			document.addEventListener("deviceready", onDeviceReady, true);
 			
             function showHide(obj, objToHide) {
@@ -265,12 +205,12 @@
 			
 			var openMenu = false;
 			function menu() {
-				if(!openMenu) { $("#menu").css3Animate({x: "-500px", time: "300ms", callback: function () { } }); openMenu = true; $.ui.setBackButtonVisibility(false); }
-				else { $("#menu").css3Animate({x: "500px", time: "300ms", callback: function () { } }); openMenu = false; if($("#main").css("display") == "none") { $.ui.setBackButtonVisibility(true); } }
+				if(!openMenu) { $("#menu").css3Animate({x: "1000px", time: "300ms", callback: function () { } }); openMenu = true; $.ui.setBackButtonVisibility(false); }
+				else { $("#menu").css3Animate({x: "2000px", time: "300ms", callback: function () { } }); openMenu = false; if($("#main").css("display") == "none") { $.ui.setBackButtonVisibility(true); } }
 			}
 			
 			function menu_accueil() {
-				$("#menu").css3Animate({x: "500px", time: "300ms", callback: function () {} });
+				$("#menu").css3Animate({x: "2000px", time: "300ms", callback: function () {} });
 				setTimeout(function(){$.ui.setBackButtonVisibility(false);},1);
 			}
 			
@@ -363,6 +303,11 @@
 				
 				trackPage('fiche_'+tabNomProduit[pNum]);
 			}
+			
+			$(function() {
+				//buildFicheProduit(1);
+				//affichePlot(2);
+			});
         </script>
 	</head>
 	
@@ -500,30 +445,19 @@
 						</div>
 					</div>
 					<script>
-						var go193 = {
-							height:"193px", //style.height to change to
-							time:"0ms", //time for transition
-							timingFunction:"linear", //timing func
-						}
-						
-						var go90 = {
-							height:"100px", //style.height to change to
-							time:"0ms", //time for transition
-							timingFunction:"linear", //timing func
-						}
-						
-						var go532 = {
-							height:"532px", //style.height to change to
-							time:"0ms", //time for transition
-							timingFunction:"linear", //timing func
-						}
-						
-						var go694 = {
-							height:"694px", //style.height to change to
-							time:"0ms", //time for transition
-							timingFunction:"linear", //timing func
-						}
-						
+						//$(function() {
+							var go193 = {
+								height:"193px", //style.height to change to
+								time:"0ms", //time for transition
+								timingFunction:"linear", //timing func
+							}
+							
+							var go90 = {
+								height:"100px", //style.height to change to
+								time:"0ms", //time for transition
+								timingFunction:"linear", //timing func
+							}
+						//});
 						var bt1_calculatrice = document.getElementById("bttab1_calculatrice"); 
 						bt1_calculatrice.addEventListener("click", function(e) { 
 							if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) {
@@ -548,21 +482,17 @@
 							}
 							
 							$("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css3Animate(go0);
-							
-							//if($("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").height() == 0) { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "193px"); }
-							//else { $("#tab1_calculatrice ~ .tabs_calculatrice .tab1_calculatrice dd div").css("height", "0px"); }
-							//$("#tab2_calculatrice ~ .tabs_calculatrice .tab2_calculatrice dd div").css("height", "0px");
 						}, false);
 						
 						function chooseDalles(pNum) {
 							if(pNum == 1) {
 								$("#dalles-rectangulaire").css("display", "block");
 								$("#dalles-enl").css("display", "none");
-								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go532);
+								$("#dalles-rectangulaire").parent().removeClass("hauteurClose");
 							} else {
 								$("#dalles-rectangulaire").css("display", "none");
 								$("#dalles-enl").css("display", "block");
-								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go694);
+								$("#dalles-rectangulaire").parent().removeClass("hauteurClose");
 							}
 						}
 					</script>
@@ -579,169 +509,158 @@
 					<div class="back-white-calculette over-text">
 					
 						<div class="accordion_dalles">
-							<span id="tab1_dalles"></span>
-							<span id="tab2_dalles"></span>
-							
-							<div class="tabs_dalles">
-								<dl class="tab1_dalles">
-									<dd>
-										<section class="back-white">
-											<img class="chiffre-dalles-calculatrice fleft" src="img/calculette-1.jpg" />
-											<section class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft">Calcul de terrasse</section>
-										</section>
-										<div class="back-calculette">
-											<section id="dalles-rectangulaire" style="display:none">
-												<section class="ombre-menu-haut"></section>
-												<section class="width100">
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-1.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">1. Largeur</section>
-															<section class=""><input id="largeurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">m</section>
-														</section>
-													</section>
-													<section class="cb space10"></section>
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-2.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">2. Longueur</section>
-															<section class=""><input id="longueurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">m</section>
-														</section>
-													</section>
-													<section class="cb space10"></section>
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-3.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">3. Hauteur</section>
-															<section class=""><input id="hauteurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">mm</section>
-															<section class="cb size26 grey text-mention font-din no-uppercase">Comprise entre 8 et  230 mm</section>
-														</section>
-													</section>
-												</section>
-												<section class="space20 cb"></section>
-												<section id="btValiderRect" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</section>
-												<section class="space10 cb"></section>
-												<!--<section class="ombre-menu-bas"></section>-->
-											</section>
-											
-											<section id="dalles-enl" style="display:none">
-												<section class="ombre-menu-haut"></section>
-												<section class="width100">
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-1.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">1. Largeur</section>
-															<section class=""><input id="largeurNumberEnl1" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">m</section>
-														</section>
-													</section>
-													<section class="cb space10"></section>
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-2.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">2. Longueur</section>
-															<section class=""><input id="longueurNumberEnl1" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">m</section>
-														</section>
-													</section>
-													<section class="cb space10"></section>
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-3.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">3. Largeur</section>
-															<section class=""><input id="largeurNumberEnl2" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">m</section>
-														</section>
-													</section>
-													<section class="cb space10"></section>
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-4.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">4. Longueur</section>
-															<section class=""><input id="longueurNumberEnl2" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">m</section>
-														</section>
-													</section>
-													<section class="cb space10"></section>
-													<section class="field" style="">
-														<section class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-5.png" /></section>
-														<section class="fleft" style="width:70%;">
-															<section class="font-din grey no-uppercase size28 text-rect-l">5. Hauteur</section>
-															<section class=""><input id="hauteurNumberEnl" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="largeurNumber" maxlength="4"/> </section>
-															<section class="mesure font-din grey no-uppercase size34">mm</section>
-															<section class="cb size26 grey text-mention font-din no-uppercase">Comprise entre 8 et  230 mm</section>
-														</section>
-													</section>
-												</section>
-												<section class="space20 cb"></section>
-												<section id="btValiderEnl" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</section>
-												<section class="space10 cb"></section>
-												<!--<section class="ombre-menu-bas"></section>-->
-											</section>
-											
+							<div class="back-white">
+								<img class="chiffre-dalles-calculatrice fleft" src="img/calculette-1.jpg" />
+								<div class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft">Calcul de terrasse</div>
+							</div>
+							<div class="back-calculette hauteurClose">
+								<div id="dalles-rectangulaire">
+									<div class="ombre-menu-haut"></div>
+									<div class="width100">
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-1.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">1. Largeur</div>
+												<div class=""><input id="largeurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">m</div>
+											</div>
 										</div>
-									</dd>
-								</dl>
-								<div class="grey-line"></div>
-								<dl class="tab2_dalles">
-									<dd>
-										<section class="back-white">
-											<img class="chiffre-dalles-calculatrice fleft" src="img/calculette-2.jpg" />
-											<section class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft">Types de dalles</section>
-										</section>
-										<div class="back-calculette">
-											<section class="container-bt-calculette">
-												<section style="width:80%" class="ma">
-													<section class="fleft width50">
-														<section id="beton-on" class=""><img class="width100" src="img/bt-beton-on.png" /></section>
-														<section id="beton-off" class="" style="display:none"><img class="width100" src="img/bt-beton-off.png" /></section>
-													</section>
-													<section class="fleft width50">
-														<section id="ceramique-on" class="" style="display:none"><img class="width100" src="img/bt-ceramique-on.png" /></section>
-														<section id="ceramique-off" class=""><img class="width100" src="img/bt-ceramique-off.png" /></section>
-													</section>
-												</section>
-											</section>
-											<section class="space30 cb"></section>
-											<section class="width100 ma">
-												<section id="dalle0" class="cont-dalle-taille fleft">
-													<section class="font-din no-uppercase size34 tac">
-														<img id="img30x30" class="width100" src="img/dalle-taille-30x30.png" />
-														<img id="img60x60" style="display:none;" class="width100" src="img/dalle-taille-60x60.png" />
-													</section>
-													<section class="radio-on" style="display:none;"><img class="width100" src="img/radio-on.png" /></section>
-													<section class="radio-off"><img class="width100" src="img/radio-off.png" /></section>
-												</section>
-												<section id="dalle1" class="cont-dalle-taille fleft">
-													<section class="font-din no-uppercase size34 tac">
-														<img id="img40x40" class="width100" src="img/dalle-taille-40x40.png" />
-														<img id="img30x120" style="display:none;" class="width100" src="img/dalle-taille-30x120.png" />
-													</section>
-													<section class="radio-on" style="display:none;"><img class="width100" src="img/radio-on.png" /></section>
-													<section class="radio-off"><img class="width100" src="img/radio-off.png" /></section>
-												</section>
-												<section id="dalle2" class="cont-dalle-taille fleft">
-													<section class="font-din no-uppercase size34 tac">
-														<img id="img50x50" class="width100" src="img/dalle-taille-50x50.png" />
-														<img id="img60x120" style="display:none;" class="width100" src="img/dalle-taille-60x120.png" />
-													</section>
-													<section class="radio-on" style="display:none;"><img class="width100" src="img/radio-on.png" /></section>
-													<section class="radio-off"><img class="width100" src="img/radio-off.png" /></section>
-												</section>
-											</section>
-											<section class="space30 cb"></section>
-											<section id="btValiderDalles" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</section>
-											<section class="space50"></section>
+										<div class="cb space10"></div>
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-2.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">2. Longueur</div>
+												<div class=""><input id="longueurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">m</div>
+											</div>
 										</div>
-									</dd>
-								</dl>
+										<div class="cb space10"></div>
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-3.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">3. Hauteur</div>
+												<div class=""><input id="hauteurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">mm</div>
+												<div class="cb size26 grey text-mention font-din no-uppercase">Comprise entre 8 et  230 mm</div>
+											</div>
+										</div>
+									</div>
+									<div class="space20 cb"></div>
+									<div id="btValiderRect" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</div>
+									<div class="space10"></div>
+									<div class="cb"></div>
+								</div>
+								
+								<div id="dalles-enl" style="display:none">
+									<div class="ombre-menu-haut"></div>
+									<div class="width100">
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-1.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">1. Largeur</div>
+												<div class=""><input id="largeurNumberEnl1" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">m</div>
+											</div>
+										</div>
+										<div class="cb space10"></div>
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-2.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">2. Longueur</div>
+												<div class=""><input id="longueurNumberEnl1" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">m</div>
+											</div>
+										</div>
+										<div class="cb space10"></div>
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-3.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">3. Largeur</div>
+												<div class=""><input id="largeurNumberEnl2" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">m</div>
+											</div>
+										</div>
+										<div class="cb space10"></div>
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-4.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">4. Longueur</div>
+												<div class=""><input id="longueurNumberEnl2" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">m</div>
+											</div>
+										</div>
+										<div class="cb space10"></div>
+										<div class="field" style="">
+											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-5.png" /></div>
+											<div class="fleft" style="width:70%;">
+												<div class="font-din grey no-uppercase size28 text-rect-l">5. Hauteur</div>
+												<div class=""><input id="hauteurNumberEnl" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="largeurNumber" maxlength="4"/> </div>
+												<div class="mesure font-din grey no-uppercase size34">mm</div>
+												<div class="cb size26 grey text-mention font-din no-uppercase">Comprise entre 8 et  230 mm</div>
+											</div>
+										</div>
+									</div>
+									<div class="space20 cb"></div>
+									<div id="btValiderEnl" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</div>
+									<div class="space10 cb"></div>
+									<!--<div class="ombre-menu-bas"></div>-->
+								</div>
+							</div>
+						<div class="grey-line"></div>
+								<div class="back-white">
+									<img class="chiffre-dalles-calculatrice fleft" src="img/calculette-2.jpg" />
+									<div class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft">Types de dalles</div>
+								</div>
+								<div id="typeDalles" class="back-calculette hauteurClose">
+									<div class="container-bt-calculette">
+										<div style="width:80%" class="ma">
+											<div class="fleft width50">
+												<div id="beton-on" class=""><img class="width100" src="img/bt-beton-on.png" /></div>
+												<div id="beton-off" class="" style="display:none"><img class="width100" src="img/bt-beton-off.png" /></div>
+											</div>
+											<div class="fleft width50">
+												<div id="ceramique-on" class="" style="display:none"><img class="width100" src="img/bt-ceramique-on.png" /></div>
+												<div id="ceramique-off" class=""><img class="width100" src="img/bt-ceramique-off.png" /></div>
+											</div>
+										</div>
+									</div>
+									<div class="space30 cb"></div>
+									<div class="width100 ma">
+										<div id="dalle0" class="cont-dalle-taille fleft">
+											<div class="font-din no-uppercase size34 tac">
+												<img id="img30x30" class="width100" src="img/dalle-taille-30x30.png" />
+												<img id="img60x60" style="display:none;" class="width100" src="img/dalle-taille-60x60.png" />
+											</div>
+											<div class="radio-on" style="display:none;"><img class="width100" src="img/radio-on.png" /></div>
+											<div class="radio-off"><img class="width100" src="img/radio-off.png" /></div>
+										</div>
+										<div id="dalle1" class="cont-dalle-taille fleft">
+											<div class="font-din no-uppercase size34 tac">
+												<img id="img40x40" class="width100" src="img/dalle-taille-40x40.png" />
+												<img id="img30x120" style="display:none;" class="width100" src="img/dalle-taille-30x120.png" />
+											</div>
+											<div class="radio-on" style="display:none;"><img class="width100" src="img/radio-on.png" /></div>
+											<div class="radio-off"><img class="width100" src="img/radio-off.png" /></div>
+										</div>
+										<div id="dalle2" class="cont-dalle-taille fleft">
+											<div class="font-din no-uppercase size34 tac">
+												<img id="img50x50" class="width100" src="img/dalle-taille-50x50.png" />
+												<img id="img60x120" style="display:none;" class="width100" src="img/dalle-taille-60x120.png" />
+											</div>
+											<div class="radio-on" style="display:none;"><img class="width100" src="img/radio-on.png" /></div>
+											<div class="radio-off"><img class="width100" src="img/radio-off.png" /></div>
+										</div>
+									</div>
+									<div class="space30 cb"></div>
+									<div id="btValiderDalles" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</div>
+									<div class="space50"></div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<script>
+						chooseDalles(1);
+						
 						function checkField(pNum) {
 							error = 0;
 							
@@ -771,8 +690,8 @@
 							}
 							
 							if(error == 0) {
-								$("#tab1_dalles ~ .tabs_dalles .tab1_dalles dd div").css3Animate(go0);
-								$("#tab2_dalles ~ .tabs_dalles .tab2_dalles dd div").css3Animate(go432);
+								$("#dalles-rectangulaire").parent().addClass("hauteurClose");
+								$("#typeDalles").removeClass("hauteurClose");
 							} else {
 								alert('Merci de remplir tous les champs.');
 							}
@@ -1171,7 +1090,7 @@
 							<div class="fleft" style="width:49%;">
 								<div class="space20"></div>
 								<div style="width:40%;" class="fleft" >
-									<div id="plot-beton-2" style="display:block;"><img style="width:60px;" src="img/picto-cata-dalle.png" /></div>
+									<div id="plot-beton-2" style="display:block;"><img style="width:80%" src="img/picto-cata-dalle.png" /></div>
 								</div>
 								<div class="font-din fleft orange size60" style="width:20%;">
 									<div id="nbPlots" class="font-arial orange size100">100</div>
@@ -1266,25 +1185,34 @@
 						<div class="grey-line cb"></div>
 						
 						<div id="accessoires-beton" class="width100" style="display:none;">
-							<div style="width:24%;" class="fleft">
+							<div style="position:absolute; width:100%; height:100%;">
+								<div style="width:25%; height:100%;border-right:1px solid #CCCCCC" class="fleft">
+								</div>
+								<div style="width:25%; height:100%;border-right:1px solid #CCCCCC" class="fleft">
+								</div>
+								<div style="width:25%; height:100%;border-right:1px solid #CCCCCC" class="fleft">
+								</div>
+								<div class="cb"></div>
+							</div>
+							<div style="width:25%;" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/rehausseur.jpg"/></div>
 								<div class="font-din grey size20 no-uppercase tac">La rehausse 60mm<br/><br/></div>
 								<div class="space10"></div>
 							</div>
-							<div style="width:24%" class="fleft grey-line-left">
+							<div style="width:25%" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/plaque-a-dalle.png"/></div>
 								<div class="font-din grey size20 no-uppercase tac">La plaque à dalle<br/><br/></div>
 								<div class="space10"></div>
 							</div>
-							<div style="width:24%" class="fleft grey-line-left">
+							<div style="width:25%" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/ecarteur-beton.png"/></div>
 								<div class="font-din grey size20 no-uppercase tac">L'écarteur 5mm<br/><br/></div>
 								<div class="space10"></div>
 							</div>
-							<div style="width:24%" class="fleft grey-line-left">
+							<div style="width:25%" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/rehausse10.png"/></div>
 								<div class="font-din grey size20 no-uppercase tac">La rehausse HD 10mm</div>

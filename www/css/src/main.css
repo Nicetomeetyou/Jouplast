@@ -240,7 +240,7 @@ body {
 	bottom:0;
 	height:100%;
 	display:block !important;
-	position:absolute; top:40px; right:-500px;
+	position:absolute; top:40px; right:1000px;
 	z-index:249;
 }
 
@@ -535,7 +535,7 @@ body {
 }
 
 @media handheld, only screen and (min-width: 768px) {
-	#afui > #navbar.hasMenu, #afui > #header.hasMenu, #afui > #content.hasMenu  {
+	/*#afui > #navbar.hasMenu, #afui > #header.hasMenu, #afui > #content.hasMenu  {
 		position:absolute;
 		left:0px;
 		-webkit-transition: transform 0ms;
@@ -564,5 +564,5 @@ body {
 		transition:none !important;
 	}
 	
-	#afui .menuButton { display:none;	}
+	#afui .menuButton { display:none;	}*/
 }

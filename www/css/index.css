@@ -198,6 +198,9 @@ a:hover{ /*color:#000000 !important;*/ }
 .text-calculatrice-choix { margin: 22px 0 0 120px; position: absolute; }
 .fleche-droite { max-width:15px; margin:28px 5px 0 0; }
 
+#dalles-rectangulaire { height:100%; }
+.hauteurClose { height: 0; overflow: hidden; }
+
 .back-white-calculette { width:100%; display:block; background-color:#FFFFFF; }
 .input-calculette { width:80px; height:50px; }
 .input-calculette-dalles { height:40px; width:50%; margin:0 10px 0 40px; }
@@ -373,6 +376,8 @@ div.apprise .apprise-buttons button {
 .cales { background:url(../img/cales.jpg) no-repeat 0 0; width:111px; height:101px; }
 .text-lambourdes-accessoires { position:relative; top:-5px; }
 .text-lambourdes-accessoires-cales { position:relative; top:-5px; }
+
+#accessoires-beton { position:relative; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* PLOT */
@@ -560,4 +565,11 @@ ul li ul li{ background: #FFFFFF; border:none; }
 /* MENTION LEGALES */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .back-white-mention { display:block; padding:20px 20px 20px 20px; }
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* MEDIA QUERIES */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media all and (min-width: 320px) and (max-width: 1024px){
+	.fleche-catalogue-small { position:relative; top:-10px; }
+}
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
