@@ -48,17 +48,14 @@
         <script type="text/javascript" charset="utf-8" src="ui/src/appframework.ui.js"></script>
         <script type="text/javascript" charset="utf-8" src="ui/transitions/all.js"></script>
         <script type="text/javascript" charset="utf-8" src="plugins/af.slidemenu.js"></script>
+		<script type="text/javascript" charset="utf-8" src="GAPlugin.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		
         <script type="text/javascript">
 			/* ---------------------------------------------------------------------------------------- */
-			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
-			
 			var gaPlugin;
-			function permissionCallback (button) {
-				if (button === 1) gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
-			}
 			
+			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
 			function nativePluginResultHandler (result) { console.log('nativePluginResultHandler: '+result); }
 			function nativePluginErrorHandler (error) {	console.log('nativePluginErrorHandler: '+error); }
 			function goingAway() { gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler); }
@@ -66,7 +63,6 @@
 			
             var tabNomProduit;
 			var tabFicheTitle;
-			var gaPlugin;
 			
 			var largeurNumberRect;
 			var longueurNumberRect;
@@ -166,7 +162,7 @@
 				console.log("Init");
 			}
             
-            function onDeviceReady() {
+            var onDeviceReady = function () {
                 AppMobi.device.setRotateOrientation("portrait");
                 AppMobi.device.setAutoRotate(false);
                 webRoot = AppMobi.webRoot + "";
@@ -175,9 +171,9 @@
                 $.ui.blockPageScroll(); 
 				
 				gaPlugin = window.plugins.gaPlugin;
-				navigator.notification.confirm('GA_PLUGIN would like your permission to collect usage data. No personal or user identifiable data will be collected.', permissionCallback, 'Attention', 'Allow,Deny');//block the page from scrolling at the header/footer
+				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
             };
-			document.addEventListener("deviceready", onDeviceReady, true);
+			document.addEventListener("appMobi.device.ready", onDeviceReady, false);
 			
             function showHide(obj, objToHide) {
                 var el = $("#" + objToHide)[0];
@@ -936,6 +932,8 @@
 				<!--CALCULATRICE LAMBOURDES-->
 				<div id="calculatrice-lambourdes" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space20"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu1.png" />
 					<div class="space10"></div>
@@ -1032,6 +1030,8 @@
 				
 				<!--RESULTAT DALLES-->
 				<div id="resultat-dalles" class="panel" style="overflow:hidden" js-scrolling="true">
+					<div class="space20"></div>
+					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">POSE DE DALLES</div>
 					<img style="height: 64%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
@@ -1276,9 +1276,11 @@
 				<div id="resultat-lambourdes" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="back">
 						<div class="space20"></div>
+						<div class="space30"></div>
+						<div class="space20"></div>
 							<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
 							<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu1.png" />
-							<div class="space10"></div>
+							<div class="space20"></div>
 							<div class="back-white-calculette over-text">
 								<div class="space20"></div>
 							<div class="tac size40 black font-din-bold">MON PROJET</div>
@@ -1311,7 +1313,7 @@
 								<div class="fleft" style="width:49%;">
 									<div class="space20"></div>
 									<div style="width:40%;" class="fleft" >
-										<div id="plot-beton-2" style="display:block;"><img style="width:60px;" src="img/picto-cata-lambourde.png" /></div>
+										<div id="plot-beton-2" style="display:block;"><img style="width:90%" src="img/picto-cata-lambourde.png" /></div>
 									</div>
 									<div class="font-din fleft orange size60" style="width:20%;">
 										<div id="nbPlotsLambourdes" class="font-arial orange size100">100</div>
@@ -1322,7 +1324,7 @@
 									<div class="space10"></div>
 									<div style="width:55%; " class="fleft" >
 										<div class="space20"></div>
-										<div style="display:block; height:80px;"><img style="position:relative; top:-10px;" class="width100" src="img/picto-tuto-1.jpg" /></div>
+										<div style="display:block;"><img style="position:relative; top:-10px;" class="width100" src="img/picto-tuto-1.jpg" /></div>
 									</div>
 									<div class="font-din fleft orange size60" style="width:25%; position:relative; left:-10px;">
 										<div class="space10"></div>
@@ -1435,6 +1437,8 @@
 				<!--CONSEILS MENU-->
 				<div id="conseil" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						QUE VOULEZ-VOUS POSER ?
 					</div>
@@ -1479,6 +1483,8 @@
 				<!--CONSEILS PLAQUES 1-->
 				<div id="conseil-plaques-1" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
 					</div>
@@ -1577,6 +1583,8 @@
 				<!--CONSEILS PLAQUES 2-->
 				<div id="conseil-plaques-2" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
 					</div>
@@ -1674,6 +1682,8 @@
 				<!--CONSEILS PLAQUES 3-->
 				<div id="conseil-plaques-3" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLAQUES A DALLES
 					</div>
@@ -1770,6 +1780,8 @@
 				<!--CONSEILS CAILLEBOTIS 1-->
 				<div id="conseil-caillebotis-1" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
 					</div>
@@ -1872,6 +1884,8 @@
 				<!--CONSEILS CAILLEBOTIS 2-->
 				<div id="conseil-caillebotis-2" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
 					</div>
@@ -1971,6 +1985,8 @@
 				<!--CONSEILS CAILLEBOTIS 3-->
 				<div id="conseil-caillebotis-3" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION SUPPORT CAILLEBOTIS
 					</div>
@@ -2064,6 +2080,8 @@
 				<!--CONSEILS LAMBOURDES 1-->
 				<div id="conseil-lambourdes-1" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
@@ -2137,6 +2155,8 @@
 				<!--CONSEILS LAMBOURDES 2-->
 				<div id="conseil-lambourdes-2" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
@@ -2210,6 +2230,8 @@
 				<!--CONSEILS LAMBOURDES 3-->
 				<div id="conseil-lambourdes-3" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
@@ -2306,6 +2328,8 @@
 				<!--CONSEILS LAMBOURDES 4-->
 				<div id="conseil-lambourdes-4" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS LAMBOURDES
 					</div>
@@ -2402,6 +2426,8 @@
 				<!--CONSEILS DALLES 1-->
 				<div id="conseil-dalles-1" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
 					</div>
@@ -2504,6 +2530,8 @@
 				<!--CONSEILS DALLES 2-->
 				<div id="conseil-dalles-2" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
 					</div>
@@ -2566,6 +2594,8 @@
 				<!--CONSEILS DALLES 3-->
 				<div id="conseil-dalles-3" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
 						INSTALLATION PLOTS DALLES
 					</div>
@@ -2660,6 +2690,7 @@
 				
 				<!--CATALOGUE MENU-->
 				<div id="catalogue" class="panel" style="overflow:hidden" js-scrolling="true">
+					<div class="space30"></div>
 					<div style="position:relative;">
 						<img style="width:100%;" src="img/img-catalogue.jpg" />
 						<!--<div style="position:absolute; margin:auto;">
@@ -2756,6 +2787,8 @@
 					<div class="back">
 						<div id="plot-dalles" style="display:none;">
 							<div class="space30"></div>
+							<div class="space30"></div>
+							<div class="space20"></div>
 							<div class="tac size40 font-din titre-calculette over-text">
 								PLOTS DALLES
 							</div>
@@ -3019,6 +3052,8 @@
 				<!--FICHE PRODUIT-->
 				<div id="fiche" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space30"></div>
+					<div class="space30"></div>
+					<div class="space20"></div>
 					<div class="back">
 						<div id="fiche-title" class="tac size40 font-din titre-calculette over-text"></div>
 						<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
@@ -3352,6 +3387,8 @@
 				
 				<!--CONTACT MENU-->
 				<div id="contact" class="panel" style="overflow:hidden" js-scrolling="true">
+					<div class="space30"></div>
+					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din">
 						VOUS AVEZ UNE QUESTION ?<br/>BESOIN D’AIDE ?
@@ -3363,7 +3400,7 @@
 						<a href="tel:0474258443" style="width:100%; height:50px; display:block;  z:index:15;">
 							<div class="ma" style="position:relative; z:index:5;">
 								<div class="ma css3buttonblue font-din tac size-text-button default-button over-text">Appelez-nous</div>
-								<!--<img style="height: 213px; left: 0; position: absolute; top: -50px; width: 100%; z-index: 1;" src="img/backmenu.png" />-->
+								<img style="height: 213px; left: 0; position: absolute; top: -50px; width: 100%; z-index: 1;" src="img/backmenu.png" />
 							</div>
 						</a>
 					</div>
@@ -3388,6 +3425,8 @@
 				
 				<!--MENTION-->
 				<div id="mention" class="panel" style="overflow:hidden" js-scrolling="true">
+					<div class="space30"></div>
+					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">
 						MENTIONS LÉGALES
