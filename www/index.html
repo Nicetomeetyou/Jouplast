@@ -48,7 +48,8 @@
         <script type="text/javascript" charset="utf-8" src="ui/src/appframework.ui.js"></script>
         <script type="text/javascript" charset="utf-8" src="ui/transitions/all.js"></script>
         <script type="text/javascript" charset="utf-8" src="plugins/af.slidemenu.js"></script>
-        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+		<script type="text/javascript" src="GAPlugin.js"></script>
 		
         <script type="text/javascript">
 			/* ---------------------------------------------------------------------------------------- */
@@ -57,7 +58,6 @@
 			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
 			function nativePluginResultHandler (result) { console.log('nativePluginResultHandler: '+result); }
 			function nativePluginErrorHandler (error) {	console.log('nativePluginErrorHandler: '+error); }
-			function goingAway() { gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler); }
 			/* ---------------------------------------------------------------------------------------- */
 			
             var tabNomProduit;
