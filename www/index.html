@@ -160,6 +160,7 @@
 			
 			function initialize() {
 				alert("Init BODY");
+				document.addEventListener("deviceready", onDeviceReady, true);
 			}
             
             var onDeviceReady = function () {
@@ -175,8 +176,8 @@
 				gaPlugin = window.plugins.gaPlugin;
 				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
             };
-			document.addEventListener("appMobi.device.ready", onDeviceReady, false);
-			document.addEventListener("deviceready", onDeviceReady, false);
+			//document.addEventListener("appMobi.device.ready", onDeviceReady, false);
+			//document.addEventListener("deviceready", onDeviceReady, false);
 
             function showHide(obj, objToHide) {
                 var el = $("#" + objToHide)[0];
