@@ -7,7 +7,8 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 			
 		<link rel="stylesheet" type="text/css" href="css/icons.css" />
 		<link rel="stylesheet" type="text/css" href="css/src/main.css"  />
@@ -22,10 +23,9 @@
 		<link rel="stylesheet" type="text/css" href="plugins/css/af.popup.css"  />
 		<link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  />
 		
-        <script type="text/javascript" charset="utf-8" src="./appframework.js"></script>
+        <script type="text/javascript" charset="utf-8" src="appframework.js"></script>
 		
         <script>
-			
             function loadedPanel(what) { $.ui.updateBadge("#aflink", $("#af").find("li").length); }
             function unloadedPanel(what) { console.log("unloaded " + what.id); }
 			
@@ -53,16 +53,6 @@
 		<script type="text/javascript" src="js/index.js"></script>
 		
         <script type="text/javascript">
-			app.initialize();
-			
-			/* ---------------------------------------------------------------------------------------- */
-			var gaPlugin;
-			
-			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
-			function nativePluginResultHandler (result) { console.log('nativePluginResultHandler: '+result); }
-			function nativePluginErrorHandler (error) {	console.log('nativePluginErrorHandler: '+error); }
-			/* ---------------------------------------------------------------------------------------- */
-			
             var tabNomProduit;
 			var tabFicheTitle;
 			
@@ -137,39 +127,51 @@
 										, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
 										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "-", "-", "-"), new Array("2000", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"));
 										
-            var search=document.location.search.toLowerCase().replace("?","");
-            if(search) {
-               $.os.useOSThemes=true;
-                if(search=="win8")
-                    $.os.ie=true;
-                $.ui.ready(function(){
-                    $("#afui").get(0).className=search;
-                });
-            }
+			
+			app.initialize();
+			
+			/* ---------------------------------------------------------------------------------------- */
+			var gaPlugin;			
+			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
+			function nativePluginResultHandler (result) { console.log('nativePluginResultHandler: '+result); }
+			function nativePluginErrorHandler (error) {	console.log('nativePluginErrorHandler: '+error); }
+			/* ---------------------------------------------------------------------------------------- */
             
             var webRoot = "./";
-            $.ui.autoLaunch = true;
+            $.ui.autoLaunch = false;
             $.ui.openLinksNewTab = false;
-            
+			
+            $(document).ready(function(){
+                $.ui.launch();
+            });
+			
 			tabFicheTitle = tabFicheTitle_fr;
 			tabNomProduit = tabNomProduit_fr;
 			
-			$.ui.launch();
-			$.ui.disableNativeScrolling();
-			$.ui.disableSideMenu();
-			$.ui.backButtonText="Retour";
-			$.feat.nativeTouchScroll=false;
+			//$.ui.launch();
+			//$.ui.disableNativeScrolling();
+			//$.ui.disableSideMenu();
+			//$.ui.backButtonText="Retour";
+			//$.feat.nativeTouchScroll=false;
+			
+			
 			
 			function initialize() {
-				alert("Init BODY");
-				document.addEventListener("deviceready", onDeviceReady, true);
+				//alert("Init BODY");
+				//document.addEventListener("deviceready", onDeviceReady, false);
 			}
             
-            var onDeviceReady = function () {
+            function initAppMobi() {
                 AppMobi.device.setRotateOrientation("portrait");
                 AppMobi.device.setAutoRotate(false);
                 webRoot = AppMobi.webRoot + "";
 				
+				$.ui.launch();
+				$.ui.disableNativeScrolling();
+				$.ui.disableSideMenu();
+				$.ui.backButtonText="Retour";
+				
+				//$.feat.nativeTouchScroll=false;
                 AppMobi.device.hideSplashScreen();
                 $.ui.blockPageScroll(); 
 				
@@ -178,8 +180,6 @@
 				gaPlugin = window.plugins.gaPlugin;
 				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-40371154-1", 10);
             };
-			//document.addEventListener("appMobi.device.ready", onDeviceReady, false);
-			//document.addEventListener("deviceready", onDeviceReady, false);
 
             function showHide(obj, objToHide) {
                 var el = $("#" + objToHide)[0];

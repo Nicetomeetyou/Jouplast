@@ -34,21 +34,10 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-
-        ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-        ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-        ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-        ref.addEventListener('exit', function(event) { alert(event.type); });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
+		initAppMobi();
         alert('Received Event: ' + id);
     }
 };
