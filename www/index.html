@@ -159,7 +159,7 @@
 			$.feat.nativeTouchScroll=false;
 			
 			function initialize() {
-				console.log("Init");
+				alert("Init BODY");
 			}
             
             var onDeviceReady = function () {
@@ -170,11 +170,14 @@
                 AppMobi.device.hideSplashScreen();
                 $.ui.blockPageScroll(); 
 				
+				alert("INIT");
+				
 				gaPlugin = window.plugins.gaPlugin;
 				gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-42897144-1", 10);
             };
 			document.addEventListener("appMobi.device.ready", onDeviceReady, false);
-			
+			document.addEventListener("deviceready", onDeviceReady, false);
+
             function showHide(obj, objToHide) {
                 var el = $("#" + objToHide)[0];
 				
