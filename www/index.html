@@ -53,9 +53,6 @@
 		<script type="text/javascript" src="js/index.js"></script>
 		
         <script type="text/javascript">
-            var tabNomProduit;
-			var tabFicheTitle;
-			
 			var largeurNumberRect;
 			var longueurNumberRect;
 			var hauteurNumberRect;
@@ -117,8 +114,49 @@
 				window.open('http://www.ntmy.fr');
 			}
 			
+			var langue = "fr";
+			
+			var tabMenuTrad_fr = new Array("caluculatrice", "conseil", "catalogue", "contact", "accueil", "mentions légales");
+			var tabMenuTrad_en = new Array("Calculator", "Advice", "Catalog", "Contact");
+			var tabMenuTrad_it = new Array("Calcolatore", "Consulenza", "Catalogo", "Contatti");
+			var tabMenuTrad_es = new Array("Calculadora", "Consejos", "Catálogo", "Contacto");
+			var tabMenuTrad_de = new Array("Rechner", "Tipps", "Katalog", "Kontakt");
+			
+			var tabCalculatriceMenu_fr = new Array("Calculez le nombre<br/>de plots nécessaire<br/>à vos travaux", "Vous souhaitez poser des :", "Dalles ou<br/>caillebotis en bois", "Terrasse rectangulaire", "Terrasse en L", "Lambourdes");
+			var tabCalculatriceMenu_en = new Array("Calculate the number<br/>of pedestals needed<br/>for your work", "You want to install:", "Tiles or<br/>wooden grating", "Rectangular deck", "L-shaped deck", "Ledger boards", "Rectangular");
+			
+			var tabCalculatriceD_fr = new Array("Pose de dalles", "Calcul de terrasse", "Largeur", "Longueur", "Hauteur", "Comprise entre 8 et 230 mm", "Valider", "Types de dalles");
+			var tabCalculatriceD_en = new Array("Installing tiles", "Calcul de terrasse", "Width", "Length", "Height", "Comprise entre 8 et 230 mm", "Ok", "Types de dalles");
+			
+			var tabCalculatriceL_fr = new Array("Calculez le nombre<br/>de plots nécessaire<br/>à vos travaux", "Vous souhaitez poser des :", "Dalles ou<br/>caillebotis en bois", "Terrasse rectangulaire", "Terrasse en L", "Lambourdes");
+			var tabCalculatriceL_en = new Array("Calculate the number<br/>of pedestals needed<br/>for your work", "You want to install:", "Tiles or<br/>wooden grating", "Rectangular deck", "L-shaped deck", "Ledger boards", "Rectangular");
+			
+			var tabResultatD_fr = new Array("Pose de dalles", "Mon projet", "Largeur", "Longueur", "Hauteur", "Plots", "Dalles", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "La plaque à dalle", "L'écarteur 5mm", "La rehausse HD 10mm", "Contactez-nous", "Notre catalogue");
+			var tabResultatD_en = new Array("Installing tiles", "My project", "Width", "Length", "Height", "Pedestals", "Tiles", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Contact Us", "Browse our catalog");
+			
+			var tabError_fr = new Array("Merci de saisir tous les champs");
+			var tabError_en = new Array("Please complete all fields");
+			
+			var tabConseilMenu_fr = new Array("Que voulez-vous poser ?","Pose de dalles","Pose de lambourdes","Pose de supports caillebotis","Pose de plaques à dalles");
+			var tabConseilMenu_en = new Array("Que voulez-vous poser ?","Installing tiles","Laying the ledger boards","Installing grating supports","Laying the tile strips");
+			
+			var tabPoseDalles_fr = new Array("Pose de dalles","Etape 1 : Placez une dalle sur quatre plots","Etape 2 : Réglez la hauteur des plots à l’aide de l’écrou","Etape 3 : Vérifiez que la dalle soit à niveau à l’aide d’un niveau à bulle", "Étape suivante", "Retour aux conseils");
+			var tabPoseDalles_en = new Array("Installing tiles","Step 1: Place slab on four pedestals", "Step 2: Use the nut to adjust pedestal height", "Step 3: Check that the slab is in the level", "Next step", "Back to the advice");
+			
+			var tabPoseCaillbotis_fr = new Array("Pose de supports caillebotis", "Etape 1 : Fixez le support caillebotis sur un plot dalle", "Etape 2 : Placez le caillebotis sur deux plots", "Etape 3 : Réglez la hauteur et mettre à niveau grâce à l’écrou.", "Etape 4 : Placez les autres caillebotis et posez le reste de votre terrasse normalement", "Étape suivante", "Retour au conseils");
+			var tabPoseCaillbotis_en = new Array("Installing grating supports", "Step 1: Attach the grating support to a tile pedestal", "Step 2: Place the grating on two pedestals, inserting half of the support so as to place another grating.", "Step 2: Adjust the height and level with the nut.", "Step 3: Place the other grating and lay the rest of your deck normally", "Next step", "Back to the advice");
+			
+			var tabPosePlaquesDalles_fr = new Array("Pose de plaques à dalles", "Etape 1 : Fixez la plaque à dalle sur un plot dalle", "Etape 2 : Placez la dalle en bord de rive ou en angle sur des plots chapeautés d’une plaque à dalle", "Etape 3 : Réglez la hauteur et mettre à niveau grâce à l’écrou", "Etape 4 : Posez les autres plots normalement", "Étape suivante", "Retour aux conseils");
+			var tabPosePlaquesDalles_en = new Array("Laying the tile strips", "Step 1: Attach the tile strip to a tile pedestal", "Step 2: Place the tile at the edge or corner of the hooded pedestals from one tile strip", "Step 3: Adjust the height and level using the nut", "Step 3: Lay the other pedestals normally", "Next step", "Back to the advice");
+			
+			var tabPoselambourdes_fr = new Array("Pose de lambourdes", "Etape 1 : Posez une lambourde sur deux plots, de manière à ce qu’elle soit perpendiculaire au mur", "Etape 2 : Réglez la hauteur des plots à l’aide de l’écrou et vérifiez que la lambourde soit à niveau à l’aide d’un niveau à bulle", "Etape 3 : Placez les autres lambourdes et assurez-vous que l’ensemble de la structure soit à niveau.", "Etape 4 : Fixez les lames sur les lambourdes", "Étape suivante", "Retour au conseils");
+			var tabPoselambourdes_en = new Array("Laying the ledger boards", "Step 1: Lay one ledger board on two pedestals, to keep it perpendicular to the wall", "Step 2: Adjust the height of the pedestals using the nut and make sure the ledger is level using a spirit level", "Step 3: Place the other ledger boards and make sure the entire structure is level.", "Step 4: Attach the slats to the ledger boards", "Next step", "Back to the advice");
+			
 			var tabFicheTitle_fr = new Array("PLOTS DALLES", "PLOTS LAMBOURDES", "PLOTS INTÉGRALS", "ACCESSOIRES");
-			var tabNomProduit_fr = new Array("HD 35mm FIXE", "HD 40/65mm RÉGLABLE", "HD 50/80mm RÉGLABLE", "HD 80/140mm RÉGLABLE", "HD 140/230mm RÉGLABLE", "HL 40/65mm RÉGLABLE", "HL 50/80mm RÉGLABLE", "HL 80/140mm RÉGLABLE", "HL 140/230mm RÉGLABLE", "HD 8/15mm RÉGLABLE", "HD 10mm FIXE", "HD 20/30mm RÉGLABLE", "HL 10mm FIXE", "HL 20/30mm RÉGLABLE", "HI 40/65mm RÉGLABLE", "HI 50/80mm RÉGLABLE", "HI 80/140mm RÉGLABLE", "HI 140/230mm RÉGLABLE", "Cales amortisseur", "HR 200 x 200 / Plaque à Dalle 200x200mm", "HR 200 C", "HR 25 mm Dalle", "HR 60 mm Dalles et Lambourdes", "HE 3mm", "HE 5mm", "HC 2mm", "HC 3mm", "HC 5mm");
+			var tabFicheTitle_en = new Array("PLOTS DALLES", "PLOTS LAMBOURDES", "PLOTS INTÉGRALS", "ACCESSOIRES");
+			
+			var tabNomProduit_fr = new Array("HD 35mm Fixe", "HD 40/65mm Réglable", "HD 50/80mm Réglable", "HD 80/140mm Réglable", "HD 140/230mm Réglable", "HL 40/65mm Réglable", "HL 50/80mm Réglable", "HL 80/140mm Réglable", "HL 140/230mm Réglable", "HD 8/15mm Réglable", "HD 10mm Fixe", "HD 20/30mm Réglable", "HL 10mm Fixe", "HL 20/30mm Réglable", "HI 40/65mm Réglable", "HI 50/80mm Réglable", "HI 80/140mm Réglable", "HI 140/230mm Réglable", "Cales amortisseur", "HR 200 x 200 / Plaque à Dalle 200x200mm", "HR 200 C", "HR 25 mm Dalle", "HR 60 mm Dalles et Lambourdes", "HE 3mm", "HE 5mm", "HC 2mm", "HC 3mm", "HC 5mm");
+			var tabNomProduit_en = new Array("HD 35mm Solid", "HD 40/65mm Adjustable", "HD 50/80mm Adjustable", "HD 80/140mm Adjustable", "HD 140/230mm Adjustable", "HL 40/65mm Adjustable", "HL 50/80mm Adjustable", "HL 80/140mm Adjustable", "HL 140/230mm Adjustable", "HD 8/15mm Adjustable", "HD 10mm Solid", "HD 20/30mm Adjustable", "HL 10mm Solid", "HL 20/30mm Adjustable", "HI 40/65mm Adjustable", "HI 50/80mm Adjustable", "HI 80/140mm Adjustable", "HI 140/230mm Adjustable", "Cales amortisseur", "HR 200 x 200 / Plaque à Dalle 200x200mm", "HR 200 C", "HR 25 mm Dalle", "HR 60 mm Dalles et Lambourdes", "HE 3mm", "HE 5mm", "HC 2mm", "HC 3mm", "HC 5mm");
 			
 			var tabConditionement = 	new Array(	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
 										, new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
@@ -127,6 +165,18 @@
 										, new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350"), new Array("60", "9.5", "2100", "350")
 										, new Array("20", "", "", ""), new Array("10", "2.5", "1120", "300"), new Array("10", "3", "1120", "350"), new Array("120", "9", "4200", "330"), new Array("60", "5", "1500", "140"), new Array("2000", "-", "-", "-"), new Array("2000", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"), new Array("40", "-", "-", "-"));
 										
+			var tabNomProduit = eval("tabNomProduit_" + langue);
+			var tabFicheTitle = eval("tabFicheTitle_" + langue);
+			var tabMenuTrad = eval("tabMenuTrad_" + langue);
+			var tabCalculatriceMenu = eval("tabCalculatriceMenu_" + langue);
+			var tabCalculatriceD = eval("tabCalculatriceD_" + langue);
+			var tabResultatD = eval("tabResultatD_" + langue);
+			var tabError = eval("tabError_" + langue);
+			var tabConseilMenu = eval("tabConseilMenu_" + langue);
+			var tabPoseDalles = eval("tabPoseDalles_" + langue);
+			var tabPoselambourdes = eval("tabPoselambourdes_" + langue);
+			var tabPoseCaillbotis = eval("tabPoseCaillbotis_" + langue);
+			var tabPosePlaquesDalles = eval("tabPosePlaquesDalles_" + langue);
 			
 			app.initialize();
 			
@@ -145,9 +195,6 @@
                 $.ui.launch();
             });
 			
-			tabFicheTitle = tabFicheTitle_fr;
-			tabNomProduit = tabNomProduit_fr;
-            
             function initAppMobi() {
                 AppMobi.device.setRotateOrientation("portrait");
                 AppMobi.device.setAutoRotate(false);
@@ -323,7 +370,7 @@
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu0.png" />
 								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-							<div class="back-home-square img-menu"><div class="font-din tac white">Calculatrice</div></div>
+							<div class="back-home-square img-menu"><div class="font-din tac white"><script>document.write(tabMenuTrad[0]);</script></div></div>
 						</div>
 					</a>
 					<a href="#conseil" onclick="trackPage('conseils');">
@@ -332,7 +379,7 @@
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu1.png" />
 								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-							<div class="back-home-square img-menu"><div class="font-din tac white">Conseils</div></div>
+							<div class="back-home-square img-menu"><div class="font-din tac white"><script>document.write(tabMenuTrad[1]);</script></div></div>
 						</div>
 					</a>
 					<div id="spacer-1"></div>
@@ -342,7 +389,7 @@
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu2.png" />
 								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-							<div class="back-home-square img-menu"><div class="font-din tac white">Catalogue</div></div>
+							<div class="back-home-square img-menu"><div class="font-din tac white"><script>document.write(tabMenuTrad[2]);</script></div></div>
 						</div>
 					</a>
 					<a href="#contact" onclick="trackPage('contact');">
@@ -351,7 +398,7 @@
 								<img class="width100" style="position:relative; z-index: 2; top: 10px;" src="img/menu3.png" />
 								<img class="backmenu" src="img/backmenu.png" />
 							</div>
-							<div class="back-home-square img-menu"><div class="font-din tac white">Contact</div></div>
+							<div class="back-home-square img-menu"><div class="font-din tac white"><script>document.write(tabMenuTrad[3]);</script></div></div>
 						</div>
 					</a>
 					<div class="cb"></div>
@@ -369,12 +416,12 @@
 				<div id="calculatrice" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space20"></div>
 					<div class="tac size40 font-din over-text">
-						CALCULEZ LE NOMBRE<br/>DE PLOTS NÉCESSAIRES<br/>À VOS TRAVAUX
+						<script>document.write(tabCalculatriceMenu[0]);</script>
 					</div>
 					<img style="height: 64%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space20"></div>
 					<div class="over-text tac size40 font-din title-din-big no-uppercase">
-						Vous souhaitez poser des :
+						<script>document.write(tabCalculatriceMenu[1]);</script>
 					</div>
 					<div class="space30"></div>
 					
@@ -388,7 +435,7 @@
 									<a id="bttab1_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
 										<section id="calculatrice-dalle" class="back-white">
 											<section class="picto-choix"><img class="width100" src="img/calcul-dalle.jpg" /></section>
-											<section class="font-din black size34 no-uppercase text-calculatrice-choix">Dalles ou<br/>caillebotis en bois</section>
+											<section class="font-din black size34 no-uppercase text-calculatrice-choix"><script>document.write(tabCalculatriceMenu[2]);</script></section>
 											<img id="fleche-up-cal-1" class="fleche-calculatrice fright" src="img/fleche-bas.png" /><img id="fleche-down-cal-1" style="display:none;" class="fleche-calculatrice fright" src="img/fleche-haut.png" />
 										</section>
 									</a>
@@ -397,13 +444,13 @@
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="chooseDalles(1)" onclick="trackPage('calculatrice_dalles_rectangle');" class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-dalles" onclick="chooseDalles(1)" onclick="trackPage('calculatrice_dalles_rectangle');" class="font-din size28 grey sub-title-cat-catalogue-haut"><script>document.write(tabCalculatriceMenu[3]);</script><img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 										<section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/enl-picto.png" /></section>
-												<a href="#calculatrice-dalles" onclick="chooseDalles(2); trackPage('calculatrice_dalles_en_l');" class="font-din size28 grey sub-title-cat-catalogue-bas">En L<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-dalles" onclick="chooseDalles(2); trackPage('calculatrice_dalles_en_l');" class="font-din size28 grey sub-title-cat-catalogue-bas"><script>document.write(tabCalculatriceMenu[4]);</script><img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 											<section class="ombre-menu-bas"></section>
 										</section>
@@ -416,7 +463,7 @@
 									<a id="bttab2_calculatrice" class="title-din-big font-din size34 color-grey no-uppercase">
 										<section id="calculatrice-lambourde" class="back-white">
 											<section class="picto-choix"><img class="width100" src="img/calcul-lambourde.jpg" /></section>
-											<section class="font-din black size34 no-uppercase text-calculatrice-choix"><br/>Lambourdes</section>
+											<section class="font-din black size34 no-uppercase text-calculatrice-choix"><br/><script>document.write(tabCalculatriceMenu[5]);</script></section>
 											<img id="fleche-up-cal-2" class="fleche-calculatrice fright" src="img/fleche-bas.png" /><img id="fleche-down-cal-2" style="display:none;" class="fleche-calculatrice fright" src="img/fleche-haut.png" />
 										</section>
 									</a>
@@ -425,7 +472,7 @@
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
-												<a href="#calculatrice-lambourdes" onclick="trackPage('calculatrice_lambourdes');"  class="font-din size28 grey sub-title-cat-catalogue-haut">Rectangulaire<img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-lambourdes" onclick="trackPage('calculatrice_lambourdes');"  class="font-din size28 grey sub-title-cat-catalogue-haut"><script>document.write(tabCalculatriceMenu[6]);</script><img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 									</div>
@@ -492,7 +539,7 @@
 				<!--CALCULATRICE DALLES-->
 				<div id="calculatrice-dalles" class="panel" style="overflow:hidden" js-scrolling="true">
 					<div class="space20"></div>
-					<div class="tac size40 font-din over-text">POSE DE DALLES</div>
+					<div class="tac size40 font-din over-text"><script>document.write(tabCalculatriceD[0]);</script></div>
 					<img style="height: 64%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
@@ -500,7 +547,7 @@
 						<div class="accordion_dalles">
 							<div class="back-white">
 								<img class="chiffre-dalles-calculatrice fleft" src="img/calculette-1.jpg" />
-								<div class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft">Calcul de terrasse</div>
+								<div class="size40 font-din-bold no-uppercase black title-chiffre-calculatrice fleft"><script>document.write(tabCalculatriceD[1]);</script></div>
 							</div>
 							<div class="back-calculette hauteurClose">
 								<div id="dalles-rectangulaire">
@@ -509,7 +556,7 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-1.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">1. Largeur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">1. <script>document.write(tabCalculatriceD[2]);</script></div>
 												<div class=""><input id="largeurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">m</div>
 											</div>
@@ -518,7 +565,7 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-2.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">2. Longueur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">2. <script>document.write(tabCalculatriceD[3]);</script></div>
 												<div class=""><input id="longueurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">m</div>
 											</div>
@@ -527,15 +574,15 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/rectangulaire-3.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">3. Hauteur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">3. <script>document.write(tabCalculatriceD[4]);</script></div>
 												<div class=""><input id="hauteurNumberRect" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">mm</div>
-												<div class="cb size26 grey text-mention font-din no-uppercase">Comprise entre 8 et  230 mm</div>
+												<div class="cb size26 grey text-mention font-din no-uppercase"><script>document.write(tabCalculatriceD[5]);</script></div>
 											</div>
 										</div>
 									</div>
 									<div class="space20 cb"></div>
-									<div id="btValiderRect" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</div>
+									<div id="btValiderRect" class="ma css3buttonblue-lagoon little-button font-din size34 tac"><script>document.write(tabCalculatriceD[6]);</script></div>
 									<div class="space10"></div>
 									<div class="cb"></div>
 								</div>
@@ -546,7 +593,7 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-1.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">1. Largeur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">1. <script>document.write(tabCalculatriceD[2]);</script></div>
 												<div class=""><input id="largeurNumberEnl1" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">m</div>
 											</div>
@@ -555,7 +602,7 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-2.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">2. Longueur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">2. <script>document.write(tabCalculatriceD[3]);</script></div>
 												<div class=""><input id="longueurNumberEnl1" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">m</div>
 											</div>
@@ -564,7 +611,7 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-3.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">3. Largeur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">3. <script>document.write(tabCalculatriceD[2]);</script></div>
 												<div class=""><input id="largeurNumberEnl2" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">m</div>
 											</div>
@@ -573,7 +620,7 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-4.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">4. Longueur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">4. <script>document.write(tabCalculatriceD[3]);</script></div>
 												<div class=""><input id="longueurNumberEnl2" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">m</div>
 											</div>
@@ -582,15 +629,15 @@
 										<div class="field" style="">
 											<div class="fleft" style="width:30%;"><img class="picto-rect-l width100" src="img/en-5.png" /></div>
 											<div class="fleft" style="width:70%;">
-												<div class="font-din grey no-uppercase size28 text-rect-l">5. Hauteur</div>
+												<div class="font-din grey no-uppercase size28 text-rect-l">5. <script>document.write(tabCalculatriceD[4]);</script></div>
 												<div class=""><input id="hauteurNumberEnl" class="input-calculette-dalles inset border-input-dalles size34 fleft" type="number" name="largeurNumber" maxlength="4"/> </div>
 												<div class="mesure font-din grey no-uppercase size34">mm</div>
-												<div class="cb size26 grey text-mention font-din no-uppercase">Comprise entre 8 et  230 mm</div>
+												<div class="cb size26 grey text-mention font-din no-uppercase"><script>document.write(tabCalculatriceD[5]);</script></div>
 											</div>
 										</div>
 									</div>
 									<div class="space20 cb"></div>
-									<div id="btValiderEnl" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</div>
+									<div id="btValiderEnl" class="ma css3buttonblue-lagoon little-button font-din size34 tac"><script>document.write(tabCalculatriceD[6]);</script></div>
 									<div class="space10 cb"></div>
 									<!--<div class="ombre-menu-bas"></div>-->
 								</div>
@@ -641,7 +688,7 @@
 										</div>
 									</div>
 									<div class="space30 cb"></div>
-									<div id="btValiderDalles" class="ma css3buttonblue-lagoon little-button font-din size34 tac">Valider</div>
+									<div id="btValiderDalles" class="ma css3buttonblue-lagoon little-button font-din size34 tac"><script>document.write(tabCalculatriceD[6]);</script></div>
 									<div class="space50"></div>
 								</div>
 							</div>
@@ -682,7 +729,7 @@
 								$("#dalles-rectangulaire").parent().addClass("hauteurClose");
 								$("#typeDalles").removeClass("hauteurClose");
 							} else {
-								alert('Merci de remplir tous les champs.');
+								alert(tabError[0]);
 							}
 						}
 						
@@ -769,7 +816,7 @@
 								}
 							}
 							
-							if(error != 0) alert('Merci de remplir tous les champs.');
+							if(error != 0) alert(tabError[0]);
 							else {
 								if(typeTerrasse == "rect") {
 									nbDalles = Math.ceil(longueurNumberRect / (longueurDalles / 100)) * Math.ceil(largeurNumberRect/( largeurDalles / 100));
@@ -1026,52 +1073,52 @@
 					<div class="space20"></div>
 					<div class="space30"></div>
 					<div class="space20"></div>
-					<div class="tac size40 font-din over-text">POSE DE DALLES</div>
+					<div class="tac size40 font-din over-text"><script>document.write(tabResultatD[0]);</script></div>
 					<img style="height: 64%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div class="space20"></div>
-						<div class="tac size40 black font-din-bold">MON PROJET</div>
+						<div class="tac size40 black font-din-bold"><script>document.write(tabResultatD[1]);</script></div>
 						<div class="space20"></div>
 						<div class="grey-line"></div>
 						<div class="space20"></div>
 						<div class="width100">
 							<div id="plan-rect" class="ma" style="width:250px; height:270px; display:none">
 								<div class="">
-									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din">largeur</div>
+									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[2]);</script></div>
 									<div id="rect-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 								</div>
 								<div class="">
-									<div style="left:180px; position:relative; top:-10px; width:20px;" class="grey size24 no-uppercase font-din">longueur</div>
+									<div style="left:180px; position:relative; top:-10px; width:20px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[3]);</script></div>
 									<div id="rect-longueur" style="left:180px; position:relative; top:-10px; width:20px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="">
-									<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din">hauteur</div>
+									<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[4]);</script></div>
 									<div id="rect-hauteur" style="left:20px; position:relative; top:100px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<img style="max-width:250px; position:relative; top:-90px;" src="img/rectangulaire-num.png" />
 							</div>
 							<div id="plan-enl" class="ma" style="width:250px; height:270px; display:none">
 								<div class="fleft">
-									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din">largeur 1</div>
+									<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[2]);</script> 1</div>
 									<div id="enl-largeur1" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 								</div>
 								<div class="fleft">
-									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase font-din">longueur 1</div>
+									<div style="left:180px; position:relative; top:-10px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[3]);</script> 1</div>
 									<div id="enl-longueur1" style="left:180px; position:relative; top:-10px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="fleft">
-									<div style="left:130px; position:relative; top:110px;" class="grey size24 no-uppercase font-din">largeur 2</div>
+									<div style="left:130px; position:relative; top:110px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[2]);</script> 2</div>
 									<div id="enl-largeur2" style="left:130px; position:relative; top:110px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="cb"></div>
 								<div class="">
-									<div style="left:-30px; position:relative; top:40px;" class="grey size24 no-uppercase font-din">longueur 2</div>
+									<div style="left:-30px; position:relative; top:40px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[3]);</script> 2</div>
 									<div id="enl-longueur2" style="left:-30px; position:relative; top:40px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<div class="">
-									<div style="left:70px; position:relative; top:30px; width:20px;" class="grey size24 no-uppercase font-din">hauteur</div>
+									<div style="left:70px; position:relative; top:30px; width:20px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatD[4]);</script></div>
 									<div id="enl-hauteur" style="left:70px; position:relative; top:30px; width:20px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 								</div>
 								<img style="max-width:250px; position:relative; top:-140px;" src="img/enl-num.png" />
@@ -1087,7 +1134,7 @@
 								</div>
 								<div class="font-din fleft orange size60" style="width:20%;">
 									<div id="nbPlots" class="font-arial orange size100">100</div>
-									<div class="grey size20" style="margin-left:10px;">Plots</div>
+									<div class="grey size20" style="margin-left:10px;"><script>document.write(tabResultatD[5]);</script></div>
 								</div>
 							</div>
 							<div class="grey-line-left fleft" style="width:49%; position:relative;">
@@ -1104,7 +1151,7 @@
 								<div class="font-din fleft orange size60" style="width:25%; position:relative; left:-10px;">
 									<div class="space10"></div>
 									<div id="nbDalles" class="font-arial orange size100">100</div>
-									<div class="grey size20" style="margin-left:10px;">Dalles</div>
+									<div class="grey size20" style="margin-left:10px;"><script>document.write(tabResultatD[6]);</script></div>
 								</div>
 							</div>
 							<div class="cb"></div>
@@ -1116,52 +1163,52 @@
 						<div class="container-schema-plot no-uppercase">
 							<div id="p1" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-8-15mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 8/15mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[9]);</script></div>
 							</div>
 							<div id="p2" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-10mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 10mm fixe</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[10]);</script></div>
 							</div>
 							<div id="p3" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-20-30mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 20/30mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[12]);</script></div>
 							</div>
 							<div id="p4" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-35mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 35mm fixe</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[0]);</script></div>
 							</div>
 							<div id="p5" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-40-65mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 40/65mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[1]);</script></div>
 							</div>
 							<div id="p6" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-50-80mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 50/80mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[2]);</script></div>
 							</div>
 							<div id="p7" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-80-140mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 80/140mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[3]);</script></div>
 							</div>
 							<div class="cb"></div>
 							<div id="p8" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-140-230mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26">HD 140/230mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[4]);</script></div>
 							</div>
 							<div id="p9" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-40-65mm-HI.jpg" /></div>
-								<div class="font-din orange tac size26">HI 40/65mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[14]);</script></div>
 							</div>
 							<div id="p10" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-50-80mm-HI.jpg" /></div>
-								<div class="font-din orange tac size26">HI 50/80mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[15]);</script></div>
 							</div>
 							<div id="p11" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-80-140mm-HI.jpg" /></div>
-								<div class="font-din orange tac size26">HI 80/140mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[16]);</script></div>
 							</div>
 							<div id="p12" class="home-square-100" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-140-230mm-HI.jpg" /></div>
-								<div class="font-din orange tac size26">HI 140/230mm réglable</div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[17]);</script></div>
 							</div>
 						</div>
 						<div class="cb"></div>
@@ -1249,12 +1296,12 @@
 						<div class="space50"></div>
 						<div class="home-square">
 							<a href="#contact" onclick="trackPage('contact_depuis_resultats_dalles');">
-								<div class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Contactez-nous</div>
+								<div class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabResultatD[13]);</script></div>
 							</a>
 						</div>
 						<div class="home-square">
 							<a href="#catalogue" onclick="trackPage('catalogue_depuis_resultats_dalles');">
-								<div id="btCatalogueDalles" class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase">Notre catalogue</div>
+								<div id="btCatalogueDalles" class="ma button-percentage css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabResultatD[14]);</script></div>
 							</a>
 						</div>
 						<div class="cb"></div>
@@ -1433,7 +1480,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						QUE VOULEZ-VOUS POSER ?
+						<script>document.write(tabConseilMenu[0]);</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -1441,7 +1488,7 @@
 						<a href="#conseil-dalles-1" onclick="trackPage('conseils_dalles_1');">
 							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-0.jpg" /></div>
-								<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Dalles</div>
+								<div class="font-din black size34 no-uppercase text-tuto-choix"> <script>document.write(tabConseilMenu[1])</script></div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
 							</div>
 						</a>
@@ -1449,7 +1496,7 @@
 						<a href="#conseil-lambourdes-1" onclick="trackPage('conseils_lambourdes_1');">
 							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-1.jpg" /></div>
-								<div class="font-din black size34 no-uppercase text-tuto-choix">Plots Lambourdes</div>
+								<div class="font-din black size34 no-uppercase text-tuto-choix"><script>document.write(tabConseilMenu[2])</script></div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
 							</div>
 						</a>
@@ -1457,7 +1504,7 @@
 						<a href="#conseil-caillebotis-1" onclick="trackPage('conseils_caillebotis_1');">
 							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-2.jpg" /></div>
-								<div class="font-din black size34 no-uppercase text-tuto-choix">Support Caillebotis</div>
+								<div class="font-din black size34 no-uppercase text-tuto-choix"><script>document.write(tabConseilMenu[3])</script></div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
 							</div>
 						</a>
@@ -1465,7 +1512,7 @@
 						<a href="#conseil-plaques-1" onclick="trackPage('conseils_plaques_1');">
 							<div class="back-white">
 								<div class="picto-tuto"><img class="width100" src="img/picto-tuto-3.jpg" /></div>
-								<div class="font-din black size34 no-uppercase text-tuto-choix">Plaques à dalles</div>
+								<div class="font-din black size34 no-uppercase text-tuto-choix"><script>document.write(tabConseilMenu[4])</script></div>
 								<div class="fleche-droite fright"><img class="width100" src="img/fleche-droite.png" /></div>
 							</div>
 						</a>
@@ -1479,7 +1526,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLAQUES A DALLES
+						<script>document.write(tabPosePlaquesDalles[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -1562,11 +1609,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Fixez la plaque à dalle sur un plot dalle.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPosePlaquesDalles[1])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-plaques-2" onclick="trackPage('conseils_dalles_2');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPosePlaquesDalles[5])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -1579,7 +1626,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLAQUES A DALLES
+						<script>document.write(tabPosePlaquesDalles[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -1661,11 +1708,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Placez la dalle en bord de rive ou en angle sur des plots chapeautés d’une plaque à dalle.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPosePlaquesDalles[2])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-plaques-3" onclick="trackPage('conseils_dalles_3');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPosePlaquesDalles[5])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -1678,7 +1725,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLAQUES A DALLES
+						<script>document.write(tabPosePlaquesDalles[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -1759,11 +1806,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Posez les autres plots normalement.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPosePlaquesDalles[4])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil" onclick="trackPage('conseils');" >
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPosePlaquesDalles[6])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -1776,7 +1823,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION SUPPORT CAILLEBOTIS
+						<script>document.write(tabPoseCaillbotis[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -1863,11 +1910,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Fixez le support caillebotis sur un plot dalle.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoseCaillbotis[1])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-caillebotis-2" onclick="trackPage('conseils_caillebotis_2');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoseCaillbotis[5])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -1880,7 +1927,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION SUPPORT CAILLEBOTIS
+						<script>document.write(tabPoseCaillbotis[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -1964,11 +2011,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Placez le caillebotis sur deux plots, en l’insérant à la moitié du support de manière à pouvoir poser un autre caillebotis.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoseCaillbotis[3])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-caillebotis-3" onclick="trackPage('conseils_caillebotis_3');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoseCaillbotis[5])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -1981,7 +2028,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION SUPPORT CAILLEBOTIS
+						<script>document.write(tabPoseCaillbotis[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2059,11 +2106,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Placez les autres caillebotis et posez le reste de votre terrasse normalement.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoseCaillbotis[4])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil" onclick="trackPage('conseils');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoseCaillbotis[6])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -2076,7 +2123,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLOTS LAMBOURDES
+						<script>document.write(tabPoselambourdes[0]);</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2109,11 +2156,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Posez une lambourde sur deux plots, de manière à ce qu’elle soit perpendiculaire au mur.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoselambourdes[1]);</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-lambourdes-2" onclick="trackPage('conseils_lambourdes_2');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoselambourdes[5]);</script></div>
 						</a>
 						<div class="space50"></div>
 						<script>
@@ -2151,7 +2198,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLOTS LAMBOURDES
+						<script>document.write(tabPoselambourdes[0]);</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2184,11 +2231,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Réglez la hauteur des plots à l’aide de l’écrou et vérifiez que la lambourde soit à niveau à l’aide d’un niveau à bulle.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoselambourdes[2]);</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-lambourdes-3"  onclick="trackPage('conseils_lambourdes_3');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoselambourdes[5]);</script></div>
 						</a>
 						<div class="space50"></div>
 						<script>
@@ -2226,7 +2273,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLOTS LAMBOURDES
+						<script>document.write(tabPoselambourdes[0]);</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2282,11 +2329,11 @@
 							<div class="space20"></div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Placez les autres lambourdes et assurez-vous que l’ensemble de la structure soit à niveau.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoselambourdes[3]);</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-lambourdes-4" onclick="trackPage('conseils_lambourdes_4');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoselambourdes[5]);</script></div>
 						</a>
 						<div class="space50"></div>
 						<script>
@@ -2324,7 +2371,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLOTS LAMBOURDES
+						<script>document.write(tabPoselambourdes[0]);</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2380,11 +2427,11 @@
 							<div class="space20"></div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Fixez les lames sur les lambourdes.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoselambourdes[4]);</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil" onclick="trackPage('conseils');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoselambourdes[6]);</script></div>
 						</a>
 						<div class="space50"></div>
 						<script>
@@ -2422,7 +2469,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLOTS DALLES
+						<script>document.write(tabPoseDalles[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2509,11 +2556,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Placez une dalle sur quatre plots.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoseDalles[1])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-dalles-2" onclick="trackPage('conseils_dalles_2');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoseDalles[4])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -2526,7 +2573,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLOTS DALLES
+						<script>document.write(tabPoseDalles[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2573,11 +2620,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Réglez la hauteur des plots à l’aide de l’écrou.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoseDalles[2])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil-dalles-3" onclick="trackPage('conseils_dalles_3');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Etape suivante</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoseDalles[4])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -2590,7 +2637,7 @@
 					<div class="space30"></div>
 					<div class="space20"></div>
 					<div class="tac size40 font-din titre-calculette over-text">
-						INSTALLATION PLOTS DALLES
+						<script>document.write(tabPoseDalles[0])</script>
 					</div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
 					<div class="space10"></div>
@@ -2670,11 +2717,11 @@
 							</div>
 							<div class="cb"></div>
 							<div class="space10"></div>
-							<div class="tac size30 font-din black no-uppercase">Vérifiez que la dalle soit à niveau à l’aide d’un niveau à bulle.</div>
+							<div class="tac size30 font-din black no-uppercase"><script>document.write(tabPoseDalles[3])</script></div>
 						</div>
 						<div class="space20"></div>
 						<a href="#conseil" onclick="trackPage('conseils');">
-							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase">Retour aux conseils</div>
+							<div class="ma default-button css3buttonblue-lagoon font-din size34 tac no-uppercase"><script>document.write(tabPoseDalles[5])</script></div>
 						</a>
 						<div class="space50"></div>
 					</div>
@@ -3516,7 +3563,7 @@
 				</div>
 			</nav>
             
-			<div id="advertisement_outer" class="ad-fullpage" style="position:relative;">
+			<!--<div id="advertisement_outer" class="ad-fullpage" style="position:relative;">
 				<div class="ad-closewrapper">
 					<div id="ad-closelink" style="display:block" onclick="$('#advertisement_outer').remove();">
 						<img style="position: fixed; right: 0; top: 0; width: 14%;" src="img/croix.png"/>
@@ -3525,7 +3572,7 @@
 				<div id="advertisement" onclick="window.open('http://www.ntmy.fr/test/jouplast/pub.php'); $('#advertisement_outer').remove();">
 					<img class="width100" src="http://www.ntmy.fr/test/jouplast/img_pub.jpg" />
 				</div>
-			</div>
+			</div>-->
 			
         </div>
 		
