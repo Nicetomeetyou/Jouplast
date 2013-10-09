@@ -41,9 +41,3 @@ var app = {
         alert('Received Event: ' + id);
     }
 };
-
-
-var gaPlugin;			
-			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
-			function nativePluginResultHandler (result) { console.log('nativePluginResultHandler: '+result); }
-			function nativePluginErrorHandler (error) {	console.log('nativePluginErrorHandler: '+error); }
