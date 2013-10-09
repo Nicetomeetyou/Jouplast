@@ -48,7 +48,6 @@
         <script type="text/javascript" charset="utf-8" src="ui/src/appframework.ui.js"></script>
         <script type="text/javascript" charset="utf-8" src="ui/transitions/all.js"></script>
         <script type="text/javascript" charset="utf-8" src="plugins/af.slidemenu.js"></script>
-        <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
 		<script type="text/javascript" src="GAPlugin.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		
@@ -114,13 +113,16 @@
 				window.open('http://www.ntmy.fr');
 			}
 			
-			var langue = "fr";
+			language = navigator.language.split("-");
+			language_root = (language[0]);
+			
+			var langue = language_root;
 			
 			var tabMenuTrad_fr = new Array("caluculatrice", "conseil", "catalogue", "contact", "accueil", "mentions légales");
-			var tabMenuTrad_en = new Array("Calculator", "Advice", "Catalog", "Contact");
-			var tabMenuTrad_it = new Array("Calcolatore", "Consulenza", "Catalogo", "Contatti");
-			var tabMenuTrad_es = new Array("Calculadora", "Consejos", "Catálogo", "Contacto");
-			var tabMenuTrad_de = new Array("Rechner", "Tipps", "Katalog", "Kontakt");
+			var tabMenuTrad_en = new Array("Calculator", "Advice", "Catalog", "Contact", "Home", "Terms of use");
+			var tabMenuTrad_it = new Array("Calcolatore", "Consulenza", "Catalogo", "Contatti", "Home", "Termini");
+			var tabMenuTrad_es = new Array("Calculadora", "Consejos", "Catálogo", "Contacto", "Inicio", "Menciones legales");
+			var tabMenuTrad_de = new Array("Rechner", "Tipps", "Katalog", "Kontakt", "Homepage", "Nutzungsbedingungen");
 			
 			var tabCalculatriceMenu_fr = new Array("Calculez le nombre<br/>de plots nécessaire<br/>à vos travaux", "Vous souhaitez poser des :", "Dalles ou<br/>caillebotis en bois", "Terrasse rectangulaire", "Terrasse en L", "Lambourdes");
 			var tabCalculatriceMenu_en = new Array("Calculate the number<br/>of pedestals needed<br/>for your work", "You want to install:", "Tiles or<br/>wooden grating", "Rectangular deck", "L-shaped deck", "Ledger boards", "Rectangular");
@@ -202,6 +204,7 @@
             var webRoot = "./";
             $.ui.autoLaunch = false;
             $.ui.openLinksNewTab = false;
+			$.ui.backButtonText="Retour";
 			
             $(document).ready(function(){
                 $.ui.launch();
