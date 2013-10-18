@@ -118,7 +118,7 @@
 			
 			if(language_root != "fr" && language_root != "en" && language_root != "it" && language_root != "es" && language_root != "de") language_root = "en";
 			
-			var langue = language_root;
+			var langue = "en";
 			
 			var tabMenuTrad_fr = new Array("caluculatrice", "conseil", "catalogue", "contact", "accueil", "mentions légales");
 			var tabMenuTrad_en = new Array("Calculator", "Advice", "Catalog", "Contact", "Home", "Terms of use");
@@ -138,11 +138,11 @@
 			var tabCalculatriceD_es = new Array("Colocación de losas", "Calcul de terrasse", "Width", "Length", "Height", "Comprise entre 8 et 230 mm", "Ok", "Types de dalles");
 			var tabCalculatriceD_de = new Array("Fliesenverlegung", "Calcul de terrasse", "Width", "Length", "Height", "Comprise entre 8 et 230 mm", "Ok", "Types de dalles");
 			
-			var tabCalculatriceL_fr = new Array("Calculez le nombre<br/>de plots nécessaire<br/>à vos travaux", "Vous souhaitez poser des :", "Dalles ou<br/>caillebotis en bois", "Terrasse rectangulaire", "Terrasse en L", "Lambourdes");
-			var tabCalculatriceL_en = new Array("Calculate the number<br/>of pedestals needed<br/>for your work", "You want to install:", "Tiles or<br/>wooden grating", "Rectangular deck", "L-shaped deck", "Ledger boards", "Rectangular");
-			var tabCalculatriceL_it = new Array("Calcola il numero<br/>dei Plots necessari", "Vuoi posare:", "Piastrelle o  quadrotti in legno", "Terrazzo rettangolare", "Terrazzo a L", "Legno", "Rettangolare");
-			var tabCalculatriceL_es = new Array("Calcule el número<br/>de Plots necesario para sus obras", "Desea colocar:", "Losas o enrejados de madera", "Terraza rectangular", "Terraza en L", "Vigas", "Rectangular");
-			var tabCalculatriceL_de = new Array("Berechnen Sie die Anzahl der notwendigen Plots", "Wollen Sie verlegen:", "Fliesen oder Holzgitterrost Fliesen", "Rechteckige Terrasse", "L-förmige Terrasse", "Balken", "Rechteckige");
+			var tabCalculatriceL_fr = new Array("Pose de lambourdes", "Largeur<br/>de la terrasse", "Longueur<br/>de la terrasse", "Hauteur de la terrasse", "Recommendations", "Valider");
+			var tabCalculatriceL_en = new Array("Laying the ledger boards", "Largeur<br/>de la terrasse", "Longueur<br/>de la terrasse", "Hauteur de la terrasse", "Recommendations", "Ok");
+			var tabCalculatriceL_it = new Array("Posa di legno", "Largeur<br/>de la terrasse", "Longueur<br/>de la terrasse", "Hauteur de la terrasse", "Recommendations", "Ok");
+			var tabCalculatriceL_es = new Array("Colocación de vigas", "Largeur<br/>de la terrasse", "Longueur<br/>de la terrasse", "Hauteur de la terrasse", "Recommendations", "Ok");
+			var tabCalculatriceL_de = new Array("Montage der Balken", "Largeur<br/>de la terrasse", "Longueur<br/>de la terrasse", "Hauteur de la terrasse", "Recommendations", "Ok");
 			
 			var tabResultatD_fr = new Array("Pose de dalles", "Mon projet", "Largeur", "Longueur", "Hauteur", "Plots", "Dalles", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "La plaque à dalle", "L'écarteur 5mm", "La rehausse HD 10mm", "Contactez-nous", "Notre catalogue");
 			var tabResultatD_en = new Array("Installing tiles", "My project", "Width", "Length", "Height", "Pedestals", "Tiles", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Contact Us", "Browse our catalog");
@@ -150,7 +150,13 @@
 			var tabResultatD_es = new Array("Colocación de losas", "Mi proyecto", "Width", "Length", "Height", "Plots", "Losas", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Contacte con nosotros", "Consulte el catálogo");
 			var tabResultatD_de = new Array("Fliesenverlegung", "Mein Projekt", "Width", "Length", "Height", "Plots", "Fliesen", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Kontaktieren Sie uns", "Schauen Sie im Katalog nach");
 			
-			var tabError_fr = new Array("Merci de saisir tous les champs");
+			var tabResultatL_fr = new Array("Pose de lambourdes", "Mon projet", "Largeur", "Longueur", "Hauteur", "Plots", "Lambourdes", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "La plaque à dalle", "L'écarteur 5mm", "La rehausse HD 10mm", "Contactez-nous", "Notre catalogue");
+			var tabResultatL_en = new Array("Laying the ledger boards", "My project", "Width", "Length", "Height", "Pedestals", "Ledger boards", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Contact Us", "Browse our catalog");
+			var tabResultatL_it = new Array("Posa di legno", "Il mio progetto", "Width", "Length", "Height", "Plots", "Legno", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Contattaci", "Consulta il catalogo");
+			var tabResultatL_es = new Array("Colocación de vigas", "Mi proyecto", "Width", "Length", "Height", "Plots", "Vigas", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Contacte con nosotros", "Consulte el catálogo");
+			var tabResultatL_de = new Array("Montage der Balken", "Mein Projekt", "Width", "Length", "Height", "Plots", "Balken", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "The tile strips", "L'écarteur 5mm", "La rehausse HD 10mm", "Kontaktieren Sie uns", "Schauen Sie im Katalog nach");
+			
+			var tabError_fr = new Array("Merci de remplir correctement tous les champs");
 			var tabError_en = new Array("Please complete all fields");
 			var tabError_it = new Array("Compila tutti i campi");
 			var tabError_es = new Array("Por favor, complete todos los campos");
@@ -216,6 +222,12 @@
 			var tabNomProduit_es = new Array("HD 35mm Fijos", "HD 40/65mm Regulables", "HD 50/80mm Regulables", "HD 80/140mm Regulables", "HD 140/230mm Regulables", "HL 40/65mm Regulables", "HL 50/80mm Regulables", "HL 80/140mm Regulables", "HL 140/230mm Regulables", "HD 8/15mm Regulables", "HD 10mm Fijos", "HD 20/30mm Regulables", "HL 10mm Fijos", "HL 20/30mm Regulables", "HI 40/65mm Regulables", "HI 50/80mm Regulables", "HI 80/140mm Regulables", "HI 140/230mm Regulables", "Cales amortisseur", "HR 200 x 200 - Plaque à Dalle", "HR 200 C - Support Caillebotis", "HR 25 mm Dalle - Réhausse Dalle", "HR 60 mm - Réhausse Dalles et Lambourdes", "HE 3mm - Ecarteur pour Dalle Céramique", "HE 5mm - Ecarteur pour Dalle Béton", "HC 2mm - Cale universelle millimétrée", "HC 3mm - Cale universelle millimétrée", "HC 5mm - Cale universelle millimétrée");
 			var tabNomProduit_de = new Array("HD 35mm Fix", "HD 40/65mm Verstellbar", "HD 50/80mm Verstellbar", "HD 80/140mm Verstellbar", "HD 140/230mm Verstellbar", "HL 40/65mm Verstellbar", "HL 50/80mm Verstellbar", "HL 80/140mm Verstellbar", "HL 140/230mm Verstellbar", "HD 8/15mm Verstellbar", "HD 10mm Fix", "HD 20/30mm Verstellbar", "HL 10mm Fix", "HL 20/30mm Verstellbar", "HI 40/65mm Verstellbar", "HI 50/80mm Verstellbar", "HI 80/140mm Verstellbar", "HI 140/230mm Verstellbar", "Cales amortisseur", "HR 200 x 200 - Plaque à Dalle", "HR 200 C - Support Caillebotis", "HR 25 mm Dalle - Réhausse Dalle", "HR 60 mm - Réhausse Dalles et Lambourdes", "HE 3mm - Ecarteur pour Dalle Céramique", "HE 5mm - Ecarteur pour Dalle Béton", "HC 2mm - Cale universelle millimétrée", "HC 3mm - Cale universelle millimétrée", "HC 5mm - Cale universelle millimétrée");
 			
+			var tabRetour_fr = new Array("Retour");
+			var tabRetour_en = new Array("Back");
+			var tabRetour_it = new Array("Ritorno");
+			var tabRetour_es = new Array("Volver");
+			var tabRetour_de = new Array("Rückkehr");
+			
 			var tabConditionement = 	new Array(	new Array("60", "9", "1200", "200"), new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
 										, new Array("60", "15", "1200", "320"), new Array("60", "15", "840", "230"), new Array("40", "17", "560", "260"), new Array("40", "17", "400", "190")
 										, new Array("30", "6", "1890", "400"), new Array("60", "3.5", "3000", "190"), new Array("60", "9.5", "2100", "350")
@@ -228,7 +240,9 @@
 			var tabMenuTrad = eval("tabMenuTrad_" + langue);
 			var tabCalculatriceMenu = eval("tabCalculatriceMenu_" + langue);
 			var tabCalculatriceD = eval("tabCalculatriceD_" + langue);
+			var tabCalculatriceL = eval("tabCalculatriceL_" + langue);
 			var tabResultatD = eval("tabResultatD_" + langue);
+			var tabResultatL = eval("tabResultatL_" + langue);
 			var tabError = eval("tabError_" + langue);
 			var tabConseilMenu = eval("tabConseilMenu_" + langue);
 			var tabPoseDalles = eval("tabPoseDalles_" + langue);
@@ -238,9 +252,9 @@
 			var tabMenuCatalogue = eval("tabMenuCatalogue_" + langue);
 			var tabMenuCataloguePlot = eval("tabMenuCataloguePlot_" + langue);
 			var tabFiche = eval("tabFiche_" + langue);
+			var tabRetour = eval("tabRetour_" + langue);
 			
 			app.initialize();
-			
 			/* ---------------------------------------------------------------------------------------- */
 			var gaPlugin;			
 			function trackPage(pName) { gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, pName); }
@@ -251,10 +265,18 @@
             var webRoot = "./";
             $.ui.autoLaunch = false;
             $.ui.openLinksNewTab = false;
-			$.ui.backButtonText="Retour";
+			$.ui.backButtonText=tabRetour[0];
 			
             $(document).ready(function(){
                 $.ui.launch();
+				
+				if(langue == "fr") {
+					$("#mentionFr").css("display", "block");
+					$("#mentionEn").css("display", "none");
+				} else {
+					$("#mentionEn").css("display", "block");
+					$("#mentionFr").css("display", "none");
+				}
             });
 			
             function initAppMobi() {
@@ -534,7 +556,7 @@
 											<section class="ombre-menu-haut"></section>
 											<section class="inside-li">
 												<section class="fleft"><img style="max-width:70px;" src="img/rectangulaire-picto.png" /></section>
-												<a href="#calculatrice-lambourdes" onclick="trackPage('calculatrice_lambourdes');"  class="font-din size28 grey sub-title-cat-catalogue-haut"><script>document.write(tabCalculatriceMenu[6]);</script><img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
+												<a href="#calculatrice-lambourdes" onclick="trackPage('calculatrice_lambourdes');"  class="font-din size28 grey sub-title-cat-catalogue-haut"><script>document.write(tabCalculatriceMenu[3]);</script><img class="fleche-catalogue-small fright" src="img/fleche-droite.png" /></a>
 											</section>
 										</section>
 									</div>
@@ -784,7 +806,7 @@
 								if(largeurNumberEnl2 == "" || largeurNumberEnl2 == 0) error ++;
 								if(longueurNumberEnl1 == "" || longueurNumberEnl1 == 0) error ++;
 								if(longueurNumberEnl2 == "" || longueurNumberEnl2 == 0) error ++;
-								if(hauteurNumber == "" || hauteurNumber < 7 || hauteurNumber > 230) error ++;
+								if(hauteurNumber == "" || hauteurNumber < 8 || hauteurNumber > 230) error ++;
 							}
 							
 							if(error == 0) {
@@ -1036,39 +1058,39 @@
 					<div class="space20"></div>
 					<div class="space30"></div>
 					<div class="space20"></div>
-					<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
+					<div class="tac size40 font-din over-text"><script>document.write(tabCalculatriceL[0]);</script></div>
 					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu1.png" />
 					<div class="space10"></div>
 					<div class="back-white-calculette over-text">
 						<div class="line-calculette">
-							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft">Largeur<br/>de la terrasse</div>
+							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft"><script>document.write(tabCalculatriceL[1]);</script></div>
 							<div class="fleft"><input id="largeurNumberLambourdes" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
 							<div class="mesure font-din grey no-uppercase size34 fleft">m</div>
 							<div class="cb"></div>
 						</div>
 						<div class="grey-line cb"></div>
 						<div class="line-calculette">
-							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft">Longueur<br/>de la terrasse</div>
+							<div class="text-hauteur font-din-bold black no-uppercase size40 fleft"><script>document.write(tabCalculatriceL[2]);</script></div>
 							<div class="fleft"><input id="longueurNumberLambourdes" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
 							<div class="mesure font-din grey no-uppercase size34 fleft">m</div>
 							<div class="cb"></div>
 						</div>
 						<div class="grey-line cb"></div>
 						<div class="line-calculette">
-							<div class="font-din-bold black no-uppercase size40 fleft">Hauteur<br/>de la terrasse<div class="size26 grey text-mention-lambourdes font-din">Comprise entre 8 et  230 mm</div></div>
+							<div class="font-din-bold black no-uppercase size40 fleft"><script>document.write(tabCalculatriceL[3]);</script><div class="size26 grey text-mention-lambourdes font-din"><script>document.write(tabCalculatriceD[5]);</script></div></div>
 							<div class="fleft"><input id="hauteurNumberLambourdes" class="tac input-calculette inset superficie-dalle border-input size34" type="number" name="" maxlength="4"/> </div>
 							<div class="mesure font-din grey no-uppercase size34 fleft">mm</div>
 							<div class="cb"></div>
 						</div>
 						<div class="grey-line cb"></div>
 						<div class="space10"></div>
-						<div class="black font-din-bold size40 no-uppercase titre-recommandations-lambourdes">Recommandations</div>
+						<div class="black font-din-bold size40 no-uppercase titre-recommandations-lambourdes"><script>document.write(tabCalculatriceL[4]);</script></div>
 						<div class="space50"></div>
 						<div class="home-square-100">
 							<div><img class="width100" src="img/exemple-lambourde.jpg" /></div>
 						</div>
 						<div class="space50"></div>
-						<div id="btValiderLambourdes" class="ma css3buttongreen little-button font-din size34 tac">Valider</div>
+						<div id="btValiderLambourdes" class="ma css3buttongreen little-button font-din size34 tac"><script>document.write(tabCalculatriceL[5]);</script></div>
 						<div class="space50"></div>
 					</div>
 					<script>
@@ -1085,7 +1107,7 @@
 							
 							if(largeurNumberLambourdes == "" || largeurNumberLambourdes == 0) error ++;
 							if(longueurNumberLambourdes == "" || longueurNumberLambourdes == 0) error ++;
-							if(hauteurNumberLambourdes == "" || hauteurNumberLambourdes < 7 || hauteurNumberLambourdes > 230) error ++;
+							if(hauteurNumberLambourdes == "" || hauteurNumberLambourdes < 8 || hauteurNumberLambourdes > 230) error ++;
 							
 							if(error != 0)   alert('Merci de remplir tous les champs.');
 							else {
@@ -1101,7 +1123,7 @@
 								$("#lambourdes-hauteur").html(hauteurNumberLambourdes + "mm");
 								
 								nbPlotsLambourdes = (1 + Math.ceil(longueurNumberLambourdes / (100 / 100))) * (1 + Math.ceil(largeurNumberLambourdes/( 50 / 100)));
-								nbDallesLambourdes = Math.ceil(nbPlotsLambourdes / 3);
+								nbDallesLambourdes = (Math.ceil(nbPlotsLambourdes / 3))-1;
 								
 								$("#nbPlotsLambourdes").html(nbPlotsLambourdes);
 								$("#nbDallesLambourdes").html(nbDallesLambourdes);
@@ -1233,7 +1255,7 @@
 							</div>
 							<div id="p3" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-20-30mm-HD.jpg" /></div>
-								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[12]);</script></div>
+								<div class="font-din orange tac size26"><script>document.write(tabNomProduit[13]);</script></div>
 							</div>
 							<div id="p4" class="home-square" style="display:none;">
 								<div class="ma"><img class="width100" src="img/plot/vue1-plot-35mm-HD.jpg" /></div>
@@ -1380,27 +1402,27 @@
 						<div class="space20"></div>
 						<div class="space30"></div>
 						<div class="space20"></div>
-							<div class="tac size40 font-din over-text">POSE DE LAMBOURDES</div>
+							<div class="tac size40 font-din over-text"><script>document.write(tabResultatL[0]);</script></div>
 							<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu1.png" />
 							<div class="space20"></div>
 							<div class="back-white-calculette over-text">
 								<div class="space20"></div>
-							<div class="tac size40 black font-din-bold">MON PROJET</div>
+							<div class="tac size40 black font-din-bold"><script>document.write(tabResultatL[1]);</script></div>
 							<div class="space20"></div>
 							<div class="grey-line"></div>
 							<div class="space20"></div>
 							<div class="width100">
 								<div id="plan-lambourdes" class="ma" style="width:250px; height:250px; display:block">
 									<div class="">
-										<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din">largeur</div>
+										<div style="left:-10px; position:relative; top:10px; width:200px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatL[2]);</script></div>
 										<div id="lambourdes-largeur" style="left:-10px; position:relative; top:10px; width:200px;" class="font-arial orange size60 no-uppercase">3.20m</div>
 									</div>
 									<div class="">
-										<div style="left:180px; position:relative; top:-10px; width:20px;" class="grey size24 no-uppercase font-din">longueur</div>
+										<div style="left:180px; position:relative; top:-10px; width:20px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatL[3]);</script></div>
 										<div id="lambourdes-longueur" style="left:180px; position:relative; top:-10px; width:20px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 									</div>
 									<div class="">
-										<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din">hauteur</div>
+										<div style="left:20px; position:relative; top:100px;" class="grey size24 no-uppercase font-din"><script>document.write(tabResultatL[4]);</script></div>
 										<div id="lambourdes-hauteur" style="left:20px; position:relative; top:100px;" class="font-arial orange size60 no-uppercase">4.20m</div>
 									</div>
 									<img style="max-width:250px; position:relative; top:-90px;" src="img/plan-lambourdes.png" />
@@ -1419,7 +1441,7 @@
 									</div>
 									<div class="font-din fleft orange size60" style="width:20%;">
 										<div id="nbPlotsLambourdes" class="font-arial orange size100">100</div>
-										<div class="grey size20" style="margin-left:10px;">Plots</div>
+										<div class="grey size20" style="margin-left:10px;"><script>document.write(tabResultatL[5]);</script></div>
 									</div>
 								</div>
 								<div class="grey-line-left fleft" style="width:49%; position:relative;">
@@ -1431,7 +1453,7 @@
 									<div class="font-din fleft orange size60" style="width:25%; position:relative; left:-10px;">
 										<div class="space10"></div>
 										<div id="nbDallesLambourdes" class="font-arial orange size100">100</div>
-										<div class="grey size20" style="margin-left:10px;">Lambourdes</div>
+										<div class="grey size20" style="margin-left:10px;"><script>document.write(tabResultatL[6]);</script></div>
 									</div>
 								</div>
 								<div class="cb"></div>
@@ -1444,31 +1466,31 @@
 							<div class="container-schema-plot no-uppercase">
 								<div id="lambourdes-p1" class="home-square-100" style="display:none;">
 									<div class="ma"><img class="width100" src="img/plot/vue1-plot-10mm-HL.jpg" /></div>
-									<div class="font-din orange tac size26">HL 10mm fixe</div>
+									<div class="font-din orange tac size26"><script>document.write(tabNomProduit[12]);</script></div>
 								</div>
 								<div id="lambourdes-p2" class="home-square" style="display:none;">
 									<div class="ma"><img class="width100" src="img/plot/vue1-plot-20-30mm-evo-HL.jpg" /></div>
-									<div class="font-din orange tac size26">HL 20/30mm réglable</div>
+									<div class="font-din orange tac size26"><script>document.write(tabNomProduit[13]);</script></div>
 								</div>
 								<div id="lambourdes-p3" class="home-square" style="display:none;">
 									<div class="ma"><img class="width100" src="img/plot/vue1-plot-20-30mm-HL.jpg" /></div>
-									<div class="font-din orange tac size26">HL 20/30mm réglable</div>
+									<div class="font-din orange tac size26"><script>document.write(tabNomProduit[13]);</script></div>
 								</div>
 								<div id="lambourdes-p4" class="home-square" style="display:none;">
 									<div class="ma"><img class="width100" src="img/plot/vue1-plot-40-65mm-HL.jpg" /></div>
-									<div class="font-din orange tac size26">HL 40/65mm réglable</div>
+									<div class="font-din orange tac size26"><script>document.write(tabNomProduit[5]);</script></div>
 								</div>
 								<div id="lambourdes-p5" class="home-square" style="display:none;">
 									<div class="ma"><img class="width100" src="img/plot/vue1-plot-50-80mm-HL.jpg" /></div>
-									<div class="font-din orange tac size26">HL 50/80mm réglable</div>
+									<div class="font-din orange tac size26"><script>document.write(tabNomProduit[6]);</script></div>
 								</div>
 								<div id="lambourdes-p6" class="home-square" style="display:none;">
 									<div class="ma"><img class="width100" src="img/plot/vue1-plot-80-140mm-HL.jpg" /></div>
-									<div class="font-din orange tac size26">HL 80/140mm réglable</div>
+									<div class="font-din orange tac size26"><script>document.write(tabNomProduit[7]);</script></div>
 								</div>
 								<div id="lambourdes-p7" class="home-square" style="display:none;">
 									<div class="ma"><img class="width100" src="img/plot/vue1-plot-140-230mm-HL.jpg" /></div>
-									<div class="font-din orange tac size26">HL 140/230mm réglable</div>
+									<div class="font-din orange tac size26"><script>document.write(tabNomProduit[8]);</script></div>
 								</div>
 							</div>
 							<div class="cb"></div>
@@ -1517,12 +1539,12 @@
 							<div class="space50"></div>
 							<div class="home-square">
 								<a href="#contact" onclick="trackPage('contact_depuis_resultats_lambourdes');">
-									<div id="btContact-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase">Contactez-nous</div>
+									<div id="btContact-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase"><script>document.write(tabResultatD[13]);</script></div>
 								</a>
 							</div>
 							<div class="home-square">
 								<a href="#catalogue" onclick="trackPage('catalogue_depuis_resultats_lambourdes');">
-									<div id="btCatalogue-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase">Notre catalogue</div>
+									<div id="btCatalogue-lambourdes" class="ma button-percentage css3buttongreen font-din size34 tac no-uppercase"><script>document.write(tabResultatD[14]);</script></div>
 								</a>
 							</div>
 							<div class="cb"></div>
@@ -1637,22 +1659,25 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-plaques-1").carousel({
+												pagingDiv: "carousel_dots_plaque_1",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												verticalScroll: false,
 												horizontalScroll: true,
 												pagingFunction:function(ind){}
 											});
 										}
-										window.addEventListener("load", init_carousel, false);
+										window.addEventListener("load", init_carousel, true);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_plaque_1" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:252px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-plaques-1" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -1667,6 +1692,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -1735,20 +1761,23 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-plaques-2").carousel({
+												pagingDiv: "carousel_dots_plaque_2",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												pagingFunction:function(ind){}
 											});
 										}
 										window.addEventListener("load", init_carousel, false);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_plaque_2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:252px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-plaques-2" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -1766,6 +1795,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -1836,20 +1866,23 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-plaques-3").carousel({
+												pagingDiv: "carousel_dots_plaque_3",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												pagingFunction:function(ind){}
 											});
 										}
 										window.addEventListener("load", init_carousel, false);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_plaque_3" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:252px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-plaques-3" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -1864,6 +1897,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -1934,20 +1968,23 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-caillebotis-1").carousel({
+												pagingDiv: "carousel_dots_caillebotis_1",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												pagingFunction:function(ind){}
 											});
 										}
 										window.addEventListener("load", init_carousel, false);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_caillebotis_1" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:252px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-caillebotis-1" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -1968,6 +2005,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -2038,20 +2076,23 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-caillebotis-2").carousel({
+												pagingDiv: "carousel_dots_caillebotis_2",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												pagingFunction:function(ind){}
 											});
 										}
 										window.addEventListener("load", init_carousel, false);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_caillebotis_2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:252px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-caillebotis-2" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -2069,6 +2110,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -2139,20 +2181,23 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-caillebotis-3").carousel({
+												pagingDiv: "carousel_dots_caillebotis_3",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												pagingFunction:function(ind){}
 											});
 										}
 										window.addEventListener("load", init_carousel, false);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_caillebotis_3" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:252px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-caillebotis-3" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -2164,6 +2209,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -2363,20 +2409,23 @@
 								</div>
 							</div>
 							<div class="space10 cb"></div>
-							<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+							<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 								<script>
 									/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 									var carousel;
 									
 									function init_carousel() {
 										carousel=$("#carousel-lambourdes-3").carousel({
+											pagingDiv: "carousel_dots_lambourdes_3",
+											pagingCssName: "carousel_paging2",
+											pagingCssNameSelected: "carousel_paging2_selected",
 											preventDefaults:true,
 											pagingFunction:function(ind){}
 										});
 									}
 									window.addEventListener("load", init_carousel, false);
 								</script>
-								<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+								<div id="carousel_dots_lambourdes_3" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:212px; z-index: 200"></div>
 								<div class="width100">
 									<div id="carousel-lambourdes-3" style="display:block;height:180px;width:305px; margin:auto">
 										<div class="tac">
@@ -2388,6 +2437,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="space20"></div>
 							<div class="space20"></div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -2461,20 +2511,23 @@
 								</div>
 							</div>
 							<div class="space10 cb"></div>
-							<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+							<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 								<script>
 									/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 									var carousel;
 									
 									function init_carousel() {
 										carousel=$("#carousel-lambourdes-4").carousel({
+											pagingDiv: "carousel_dots_lambourdes_4",
+											pagingCssName: "carousel_paging2",
+											pagingCssNameSelected: "carousel_paging2_selected",
 											preventDefaults:true,
 											pagingFunction:function(ind){}
 										});
 									}
 									window.addEventListener("load", init_carousel, false);
 								</script>
-								<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+								<div id="carousel_dots_lambourdes_4" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:260px; z-index: 200"></div>
 								<div class="width100">
 									<div id="carousel-lambourdes-4" style="display:block;height:220px;width:305px; margin:auto">
 										<div class="tac">
@@ -2486,6 +2539,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="space20"></div>
 							<div class="space20"></div>
 							<div class="cb"></div>
 							<div class="space10"></div>
@@ -2580,20 +2634,23 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-dalle-1").carousel({
+												pagingDiv: "carousel_dots_dalle_1",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												pagingFunction:function(ind){}
 											});
 										}
 										window.addEventListener("load", init_carousel, false);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_dalle_1" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:255px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-dalle-1" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -2614,6 +2671,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -2748,13 +2806,16 @@
 							</div>-->
 							<div>
 								<!--<img class="width100" src="video/dalles/dalles-conseil-1.gif" />-->
-								<div title="" class="" id="webcarousel"  style="overflow:hidden; position: relative; top:10px;">
+								<div title="" class="" id="webcarousel"  style="position: relative; top:10px;">
 									<script>
 										/*var tabNomRecette = new Array("recette0", "recette1", "recette2", "recette3","recette4");*/
 										var carousel;
 										
 										function init_carousel() {
 											carousel=$("#carousel-dalle-3").carousel({
+												pagingDiv: "carousel_dots_dalle_3",
+												pagingCssName: "carousel_paging2",
+												pagingCssNameSelected: "carousel_paging2_selected",
 												preventDefaults:true,
 												lockmove:true,
 												okToMove:true,
@@ -2763,7 +2824,7 @@
 										}
 										window.addEventListener("load", init_carousel, false);
 									</script>
-									<!--<div id="carousel_dots2" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:150px; z-index: 200"></div>-->
+									<div id="carousel_dots_dalle_3" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top:255px; z-index: 200"></div>
 									<div class="width100">
 										<div id="carousel-dalle-3" style="display:block;height:220px;width:305px; margin:auto">
 											<div class="tac">
@@ -2775,6 +2836,7 @@
 										</div>
 									</div>
 								</div>
+								<div class="space20"></div>
 								<div class="space20"></div>
 							</div>
 							<div class="cb"></div>
@@ -3530,44 +3592,87 @@
 					<div class="space30"></div>
 					<div class="space30"></div>
 					<div class="space20"></div>
-					<div class="tac size40 font-din over-text">
-						MENTIONS LÉGALES
-					</div>
-					<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
-					<div class="space20"></div>
-					<div class="back-white-calculette over-text">
-						<div class="space10"></div>
-						<div class="size26 black font-din back-white-mention no-uppercase">
-							<h2>1. Présentation de notre application mobile</h2>
-							Conformément à la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, notre application mobile créé par <span class="orange" onclick="openSiteN()">NiceToMeetYou</span>, propriétaire du site <span class="orange" onclick="openSiteN()">http://www.ntmy.fr</span>, met à disposition du public les informations concernant notre entreprise.<br />
-							Eventuellement modifiables, nous vous invitons donc à consulter nos mentions légales le plus souvent possible, de manière à en prendre connaissance fréquemment.
-							L'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> appartient à Jouplast - Société par actions simplifiée , dont le siège social est situé à l'adresse suivante : 01250 Simandre sur Suran .<br />
-							Personne physique ou morale, Richard BERTONI est responsable de la publication, dont l'adresse e-mail est la suivante : <span class="orange" onclick="sendEmail();">rbertoni@tmpinnovations.com</span><br />
-							Le webmaster, Richard BERTONI, est responsable de l'administration du site, dont l'adresse e-mail est la suivante : <span class="orange" onclick="sendEmail();">rbertoni@tmpinnovations.com</span>.<br />
-							Le site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> est hébergé par Siti, dont le siège social est localisé à l'adresse suivante : 53 Avenue Alsace Lorraine 01000 Bourg-en-Bresse.
-							<br/><br/><br/><h2>2. Conditions générales d’utilisation de l'application mobile et des services proposés</h2>
-							En utilisant notre application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span>, vous acceptez pleinement et entièrement les conditions générales d'utilisation précisées dans nos mentions légales. 
-							<br/><br/><br/><h2>3. Les produits ou services proposés par <span class="orange" onclick="openSiteJ()">www.jouplast.com</span></h2>
-							En accord avec sa politique de communication, l'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> a pour vocation d'informer les utilisateurs sur les services proposés par Jouplast, qui s'efforce alors de fournir des informations précises sur son activité et ses équipements. Cependant, des inexactitudes ou des omissions peuvent exister : la société ne pourra en aucun cas être tenue pour responsable pour toute erreur présente sur l'application mobile.
-							<br/><br/><br/><h2>4.  Limitations contractuelles</h2>
-							Les informations retranscrites sur notre application mobile et notre site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> font l’objet de démarches qualitatives, en vue de nous assurer de leur fiabilité. Cependant, nous ne pourrons encourir de responsabilités en cas d’inexactitudes techniques lors de nos explications.<br />
-							Si vous constatez une erreur concernant des informations que nous auront pu omettre, n’hésitez pas à nous le signaler par mail à <span class="orange" onclick="sendEmail();">rbertoni@tmpinnovations.com</span>.
-							Les liens reliés directement ou indirectement à notre application mobile ne sont pas sous le contrôle de notre société. Par conséquent, nous ne pouvons nous assurer de l’exactitude des informations présentes sur ces autres sites Internet.
-							Utilisant la technologie JavaScript, l'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> ne pourra être tenu pour responsable en cas de dommages matériels liés à son utilisation. Par ailleurs, toute autre type de conséquence liée à l'exploitation de l'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span>, qu'elle soit direct ou indirect (bug, incompatibilité, virus, perte de marché, etc.).
-							<br/><br/><br/><h2>5. Propriété intellectuelle et contenu du site Internet</h2>
-							Le contenu rédactionnel et visuel de l'application mobile du site web <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> appartient exclusivement à la société Virtual Sh@ring Partner Ltd. Toute violation des droits d’auteur est sanctionnée par l’article L.335-2 du Code de la Propriété Intellectuelle, avec une peine encourue de 2 ans d’emprisonnement et de 150 000€ d’amende
-							L'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> ne pourra être mis en cause en cas de propos injurieux, à caractère raciste, diffamant ou pornographique, échangés sur les espaces interactifs. La société se réserve également le droit de supprimer tout contenu contraire aux valeurs de l'entreprise ou à la législation applicable en France.
-							<br/><br/><br/><h2>6. Données personnelles, respect de votre vie privée et de vos libertés</h2>
-							Toute informations recueillie sur l'application mobile du site web <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> se font dans le cadre des besoins liés à l'utilisation de notre plateforme, tels que le formulaire de commande ou la demande d'inscription à la Newsletter. Par ailleurs, le désabonnement de la Newsletter se fait grâce au lien situé en pied de page.
-							Jouplast s'engage à ne céder en aucun cas les informations concernant les utilisateurs du site Internet, de quelque façon qu'il soit (vente, échange, prêt, location, don).
-							Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, l’utilisateur bénéficie d’un droit d’accès et de rectification aux informations le concernant, droit qu’il peut exercer à tout moment en adressant un mail à l’adresse <span class="orange" onclick="sendEmail();">rbertoni@tmpinnovations.com</span>, ou en effectuant sa demande par courrier, à l’adresse suivante : 01250 Simandre sur Suran.
-							<br/><br/><br/><h2>7. Droit applicable et lois concernées</h2>
-							Soumis au droit français, l'application mobile du site web <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> est encadré par la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, l’article L.335-2 du Code de la Propriété Intellectuelle et la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004.
-							<br/><br/><br/><h2>8. Clause de non-concurrence et de non contournement</h2>
-							L’Utilisateur reconnaît que les informations concernant la présente application mobile sont la propriété exclusive de la société Virtual Sh@ring Partner Ltd, Company N° 8520792, et ne peuvent être copiées ou reproduites même partiellement, sans l’autorisation expresse, écrite et préalable de la société Virtual Sh@ring Partner Ltd. (article L. 122-4 et L. 335-2 du Code de la Propriété Intellectuelle) Les originaux et toutes les copies de ces informations devront être restitués dans les 20 jours suivant toute demande de la société Virtual Sh@ring Partner Ltd.
-							L’Utilisateur s’engage à ne pas divulguer les informations relevant des connaissances de la société Virtual Sh@ring Partner Ltd et à se garder de tout comportement qui pourrait, directement ou indirectement, priver la société Virtual Sh@ring Partner Ltd de droits, honoraires, bénéfices de toute nature qui pourraient lui être dus au titre de ces informations. Il s’engage, notamment, à ne pas tenter de contourner la société Virtual Sh@ring Partner Ltd, ni d’utiliser les renseignements confidentiels, pour chercher à tirer parti par quelque moyen que ce soit d’une information communiquée, comme par exemple s’approprier ou utiliser seul ou avec des tiers tout ou partie d’une information ou encore contacter sans accord préalable de la société Virtual Sh@ring Partner Ltd, une partie dont les coordonnées lui auraient été communiquées par cette dernière.
+					<div id="mentionFr">
+						<div class="tac size40 font-din over-text">
+							MENTIONS LÉGALES
+						</div>
+						<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
+						<div class="space20"></div>
+						<div class="back-white-calculette over-text">
+							<div class="space10"></div>
+							<div class="size26 black font-din back-white-mention no-uppercase">
+								<h2>1. Présentation de notre application mobile</h2>
+								Conformément à la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, notre application mobile créé par <span class="orange" onclick="openSiteN()">NiceToMeetYou</span>, propriétaire du site <span class="orange" onclick="openSiteN()">http://www.ntmy.fr</span>, met à disposition du public les informations concernant notre entreprise.<br />
+								Eventuellement modifiables, nous vous invitons donc à consulter nos mentions légales le plus souvent possible, de manière à en prendre connaissance fréquemment.
+								L'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> appartient à Jouplast - Société par actions simplifiée , dont le siège social est situé à l'adresse suivante : 01250 Simandre sur Suran .<br />
+								Personne physique ou morale, Richard BERTONI est responsable de la publication, dont l'adresse e-mail est la suivante : <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span><br />
+								Le webmaster, Richard BERTONI, est responsable de l'administration du site, dont l'adresse e-mail est la suivante : <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span>.<br />
+								Le site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> est hébergé par Siti, dont le siège social est localisé à l'adresse suivante : 53 Avenue Alsace Lorraine 01000 Bourg-en-Bresse.
+								<br/><br/><br/><h2>2. Conditions générales d’utilisation de l'application mobile et des services proposés</h2>
+								En utilisant notre application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span>, vous acceptez pleinement et entièrement les conditions générales d'utilisation précisées dans nos mentions légales. 
+								<br/><br/><br/><h2>3. Les produits ou services proposés par <span class="orange" onclick="openSiteJ()">www.jouplast.com</span></h2>
+								En accord avec sa politique de communication, l'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> a pour vocation d'informer les utilisateurs sur les services proposés par Jouplast, qui s'efforce alors de fournir des informations précises sur son activité et ses équipements. Cependant, des inexactitudes ou des omissions peuvent exister : la société ne pourra en aucun cas être tenue pour responsable pour toute erreur présente sur l'application mobile.
+								<br/><br/><br/><h2>4.  Limitations contractuelles</h2>
+								Les informations retranscrites sur notre application mobile et notre site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> font l’objet de démarches qualitatives, en vue de nous assurer de leur fiabilité. Cependant, nous ne pourrons encourir de responsabilités en cas d’inexactitudes techniques lors de nos explications.<br />
+								Si vous constatez une erreur concernant des informations que nous auront pu omettre, n’hésitez pas à nous le signaler par mail à <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span>.
+								Les liens reliés directement ou indirectement à notre application mobile ne sont pas sous le contrôle de notre société. Par conséquent, nous ne pouvons nous assurer de l’exactitude des informations présentes sur ces autres sites Internet.
+								Utilisant la technologie JavaScript, l'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> ne pourra être tenu pour responsable en cas de dommages matériels liés à son utilisation. Par ailleurs, toute autre type de conséquence liée à l'exploitation de l'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span>, qu'elle soit direct ou indirect (bug, incompatibilité, virus, perte de marché, etc.).
+								<br/><br/><br/><h2>5. Propriété intellectuelle et contenu du site Internet</h2>
+								Le contenu rédactionnel et visuel de l'application mobile du site web <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> appartient exclusivement à la société Virtual Sh@ring Partner Ltd. Toute violation des droits d’auteur est sanctionnée par l’article L.335-2 du Code de la Propriété Intellectuelle, avec une peine encourue de 2 ans d’emprisonnement et de 150 000€ d’amende
+								L'application mobile du site <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> ne pourra être mis en cause en cas de propos injurieux, à caractère raciste, diffamant ou pornographique, échangés sur les espaces interactifs. La société se réserve également le droit de supprimer tout contenu contraire aux valeurs de l'entreprise ou à la législation applicable en France.
+								<br/><br/><br/><h2>6. Données personnelles, respect de votre vie privée et de vos libertés</h2>
+								Toute informations recueillie sur l'application mobile du site web <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> se font dans le cadre des besoins liés à l'utilisation de notre plateforme, tels que le formulaire de commande ou la demande d'inscription à la Newsletter. Par ailleurs, le désabonnement de la Newsletter se fait grâce au lien situé en pied de page.
+								Jouplast s'engage à ne céder en aucun cas les informations concernant les utilisateurs du site Internet, de quelque façon qu'il soit (vente, échange, prêt, location, don).
+								Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, l’utilisateur bénéficie d’un droit d’accès et de rectification aux informations le concernant, droit qu’il peut exercer à tout moment en adressant un mail à l’adresse <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span>, ou en effectuant sa demande par courrier, à l’adresse suivante : 01250 Simandre sur Suran.
+								<br/><br/><br/><h2>7. Droit applicable et lois concernées</h2>
+								Soumis au droit français, l'application mobile du site web <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> est encadré par la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, l’article L.335-2 du Code de la Propriété Intellectuelle et la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004.
+								<br/><br/><br/><h2>8. Clause de non-concurrence et de non contournement</h2>
+								L’Utilisateur reconnaît que les informations concernant la présente application mobile sont la propriété exclusive de la société Virtual Sh@ring Partner Ltd, Company N° 8520792, et ne peuvent être copiées ou reproduites même partiellement, sans l’autorisation expresse, écrite et préalable de la société Virtual Sh@ring Partner Ltd. (article L. 122-4 et L. 335-2 du Code de la Propriété Intellectuelle) Les originaux et toutes les copies de ces informations devront être restitués dans les 20 jours suivant toute demande de la société Virtual Sh@ring Partner Ltd.
+								L’Utilisateur s’engage à ne pas divulguer les informations relevant des connaissances de la société Virtual Sh@ring Partner Ltd et à se garder de tout comportement qui pourrait, directement ou indirectement, priver la société Virtual Sh@ring Partner Ltd de droits, honoraires, bénéfices de toute nature qui pourraient lui être dus au titre de ces informations. Il s’engage, notamment, à ne pas tenter de contourner la société Virtual Sh@ring Partner Ltd, ni d’utiliser les renseignements confidentiels, pour chercher à tirer parti par quelque moyen que ce soit d’une information communiquée, comme par exemple s’approprier ou utiliser seul ou avec des tiers tout ou partie d’une information ou encore contacter sans accord préalable de la société Virtual Sh@ring Partner Ltd, une partie dont les coordonnées lui auraient été communiquées par cette dernière.
+							</div>
 						</div>
 					</div>
+					<div id="mentionEn" style="display:none">
+						<div class="tac size40 font-din over-text">
+							DISCLAIMER
+						</div>
+						<img style="height: 50%; left: 0%; position: absolute; top: -13%; width: 100%; z-index: 1;" src="img/backmenu.png" />
+						<div class="space20"></div>
+						<div class="back-white-calculette over-text">
+							<div class="space10"></div>
+							<div class="size26 black font-din back-white-mention no-uppercase">
+								<h2>1. Presentation of our mobile application</h2>
+								In accordance with Law No. 2004-2005 of June 21, 2004 regarding trust in the digital economy, our mobile application created by <span class="orange" onclick="openSiteN()">NiceToMeetYou</span>, owner of the <span class="orange" onclick="openSiteN()">http://www.ntmy.fr</span> website, provides information concerning our company for public consultation. <br/>
+								We invite you to consult our legal notice as often as possible in order to be up-to-date with it, as it may change.
+								The mobile application of the website <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> belongs to Jouplast - Simplified joint-stock company, whose headquarters is located at the following address: 01250 Simandre-sur-Suran. 
+								The legal person or entity responsible for the publication is Richard Bertoni, whose e-mail address is the following: <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span>.
+								The webmaster responsible for the administration of the site is Richard Bertoni, whose e-mail address is the following: <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span>. 
+								The website <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> is hosted by Siti, whose headquarters is located at the following address: 53, avenue Alsace Lorraine, 01000 Bourg-en-Bresse, France.
+								<br/><br/><br/><h2>2. Terms of use of the mobile application and available services</h2>
+								By using our mobile application of the <span class="orange" onclick="openSiteJ()">Jouplast website</span>, you fully and completely accept the terms and conditions set out in our legal notice.
+								<br/><br/><br/><h2>3. Products or services offered by <span class="orange" onclick="openSiteJ()">Jouplast</span></h2>
+								In accordance with its communication policy, the mobile application of the <span class="orange" onclick="openSiteJ()">Jouplast</span> website is designed to inform users about the services offered by <span class="orange" onclick="openSiteJ()">Jouplast</span>, which then strives to provide accurate information about its activity and its equipment. However, inaccuracies or omissions may exist: the company shall in no circumstances be held liable for any error in the mobile application.
+								<br/><br/><br/><h2>4. Contractual limitations</h2>
+								The information entered onto our mobile application and our website <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> is subject to qualitative steps in order to ensure its reliability. However, we cannot incur liability for technical inaccuracies in our explanations. 
+								If you find an error in the information that we may have omitted, please notify us by e-mail at <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span>.
+								Links directly or indirectly connected to our mobile application are not under the control of our company. Consequently, we cannot be assured of the accuracy of the information contained on these other websites.
+								Using JavaScript technology, the mobile application of the <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> website cannot be held responsible for any material damage arising from its use. In addition, [it shall not be held responsible for] any other type of consequence associated with the operation of the mobile application of the <span class="orange" onclick="openSiteJ()">www.jouplast.com</span>  website, whether direct or indirect (bugs, incompatibility, viruses, loss of market shares, etc..).
+								<br/><br/><br/><h2>5. Intellectual property and content of the website</h2>
+								Editorial and visual content of the mobile application of the <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> website belongs exclusively to <span class="orange" onclick="openSiteJ()">Jouplast</span>. Any infringement of copyright is punishable under Article L.335-2 of the Code of Intellectual Property, with a penalty of two years imprisonment and a fine of € 150,000.
+								The mobile application of the <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> website cannot be blamed in case of any insults, whether of a racist, defamatory or pornographic nature, that may be exchanged on interactive areas. The company also reserves the right to remove any content contrary to the values of the company or the applicable law in France.
+								<br/><br/><br/><h2>6. Personal data, respect for your privacy and your liberties</h2>
+								Any information collected on the mobile application of the <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> website is in the context of the needs related to the use of our platform, such as the order form or registration to the Newsletter. Additionally, unsubscription from the newsletter is done through the link in the footer. 
+								<span class="orange" onclick="openSiteJ()">Jouplast</span> agrees to never disclose any information, under any circumstances, about the users of its website in any way whatsoever (sale, exchange, loan, lease, donation).
+								In accordance with the "Data Processing and Liberties" Law of January 6, 1978, as amended in 2004, the user enjoys the right to access and rectify information concerning him, which he may exercise at any time by sending an e-mail to the following address <span class="orange" onclick="sendEmail();">info@tmpinnovations.com</span>, or by making his request by post to the following address: 01250 Simandre-sur-Suran.
+								<br/><br/><br/><h2>7. Applicable law and relevant laws</h2>
+								Subject to French law, the mobile application of the <span class="orange" onclick="openSiteJ()">www.jouplast.com</span> website is framed by Law No. 2004 - 2005 of June 21, 2004 regarding trust in the digital economy, article L.335 - 2 of the Code of Intellectual Property and the "Data Processing and Liberties" Law of January 6, 1978, as amended in 2004.
+								<br/><br/><br/><h2>8. Provision of non-competition and non-circumvention</h2>
+								The User acknowledges that the information regarding this mobile application is the exclusive property of the Virtual Sh@ring Partner Ltd, Company No. 8520792, and may not be copied or reproduced even partially, without the prior express, written consent of Virtual Sh@ring Partner Ltd. Company (Article L. 122-4 and L. 335-2 of the Code of Intellectual Property) The original and all copies of this information must be returned within 20 days of any request from  the Virtual Partner Ltd. Sh@ring Company. 
+								The User undertakes not to disclose the information within the knowledge of Virtual Sh@ring Partner Ltd. Company and to refrain from any conduct that might, directly or indirectly, deprive Virtual Sh@ring Partner Ltd. Company of rights, fees, profits of any kind that may be due in respect to such information. The User undertakes, particularly, to refrain from circumventing the Virtual Sh@ring Partner Ltd Company or using confidential information, to seek to use it to his advantage by any means whatsoever, be it communicated information, as for example appropriating or using alone or with a third party, all or part of information or even contact without the consent of the Virtual Sh@ring Partner Ltd Company, a party whose contact information would have been communicated to him by the latter.
+							</div>
+						</div>
+					</div>
+					
 				</div>
 				<!--END MENTION-->
 			</div>
