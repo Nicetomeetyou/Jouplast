@@ -54,8 +54,8 @@ a:hover{}
 .inset{-moz-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);-webkit-box-shadow:inset 0 3px 8px rgba(0,0,0,.4);box-shadow:inset 0 3px 8px rgba(0,0,0,.24);}
 .header-container-logo{margin:auto;max-width:144px;padding-top:12px;}
 .header-container-bt-menu{position:absolute;right:0px;top:3px;}
-.carousel_paging2{border-radius:10px;background:#B7E6FF;width:10px;height:10px;display:inline-block;-webkit-box-shadow:0px 2px 0px rgba(255,255,255,0.8);box-shadow:0px 2px 0px rgba(255,255,255,0.8);}
-.carousel_paging2_selected{border-radius:10px;background:#0088D1;width:10px;height:10px;display:inline-block;-webkit-box-shadow:0px 2px 0px rgba(255,255,255,0.8);box-shadow:0px 2px 0px rgba(255,255,255,0.8);}
+.carousel_paging2{border-radius:10px;background:#B7E6FF;height:20px;width:20px;display:inline-block;-webkit-box-shadow:0px 2px 0px rgba(255,255,255,0.8);box-shadow:0px 2px 0px rgba(255,255,255,0.8);}
+.carousel_paging2_selected{position:relative;top:-2px;border-radius:10px;background:#0088D1;width:15px;height:15px;display:inline-block;-webkit-box-shadow:0px 2px 0px rgba(255,255,255,0.8);box-shadow:0px 2px 0px rgba(255,255,255,0.8);}
 .home-square{width:50%;float:left;}
 .home-square-100{width:100%;}
 #main{font-family:din-medium!important;color:#FFFFFF;font-size:15px;margin:auto;}
@@ -81,6 +81,7 @@ a:hover{}
 .grey-line{border-top:1px solid #CCCCCC;width:100%;position:relative;}
 .picto-choix{height:53px;max-width:90px;margin:12px;position:absolute;z-index:0;}
 .text-calculatrice-choix{margin:22px 0 0 120px;position:absolute;}
+.text-calculatrice-choix2{margin:22px 0 0 120px;position:absolute;}
 .fleche-droite{max-width:15px;margin:28px 5px 0 0;}
 #dalles-rectangulaire{height:100%;}
 .hauteurClose{height:0;overflow:hidden;}
@@ -95,7 +96,7 @@ a:hover{}
 .titre-calculette{position:relative;top:-10px;}
 .superficie-dalle{margin-left:20px;margin-right:5px;}
 .hauteur-dalle{margin-left:50px;margin-right:10px;}
-.text-hauteur{margin-top:7px;margin-right:34px;}
+.text-hauteur{padding-left:10px;}
 .mesure{margin-top:15px;}
 .chiffre-dalles-calculatrice{max-width:29px;margin:30px 20px 30px 30px;}
 .title-chiffre-calculatrice{margin-top:34px;}
@@ -224,5 +225,13 @@ ul li ul li{background:#FFFFFF;border:none;}
 .size24{font-size:16px!important;}
 .size20{font-size:16px!important;}
 .size28{font-size:20px!important;}
-.size30{font-size:18px!important;}}
+.size30{font-size:18px!important;}
+.text-calculatrice-choix2{margin:10px 0 0 120px;position:absolute;}
+.telTab{display:block!important;}
+.telPhone{display:none;}
+.text-hauteur{margin-top:7px;padding-left:10px;}
+#nbPlotTab #nbPlots{font-size:80px!important;}
+#nbPlotTab #nbDalles{font-size:80px!important;}
+#nbPlotTab .size20{font-size:25px!important;}
+#plot-beton-2{padding:10px 0 0 10px;}}
 
