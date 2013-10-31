@@ -119,7 +119,7 @@
 			if(language_root != "fr" && language_root != "en" && language_root != "it" && language_root != "es" && language_root != "de") language_root = "en";
 			
 			var langue = language_root;
-			//var langue = "de";
+			var langue = "de";
 			
 			var tabMenuTrad_fr = new Array("Caluculatrice", "Conseil", "Catalogue", "Contact", "Accueil", "Mentions légales");
 			var tabMenuTrad_en = new Array("Calculator", "Advice", "Catalog", "Contact", "Home", "Terms of use");
@@ -145,17 +145,17 @@
 			var tabCalculatriceL_es = new Array("Colocación de vigas", "Largeur de la terrasse", "Longueur de la terrasse", "Hauteur de la terrasse", "Recommendations", "Ok");
 			var tabCalculatriceL_de = new Array("Montage der Balken", "Largeur de la terrasse", "Longueur de la terrasse", "Hauteur de la terrasse", "Recommendations", "Ok");
 			
-			var tabResultatD_fr = new Array("Pose de dalles", "Mon projet", "Largeur", "Longueur", "Hauteur", "Plots", "Dalles", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "La plaque à dalle", "L'écarteur 5mm", "La rehausse HD 10mm", "Contactez-nous", "Notre catalogue");
-			var tabResultatD_en = new Array("Installing tiles", "My project", "Width", "Length", "Height", "Pedestals", "Tiles", "Accessories :", "Have you thought of the necessary accessories for your work?", "Side extension 60 mm", "Slab plate", "Retractor 5 mm", "side extension HD 10 mm", "Contact Us", "Browse our catalog");
-			var tabResultatD_it = new Array("Posa di piastrelle", "Il mio progetto", "Larghezza", "Lunghezza", "Lunghezza", "Plots", "Accessori", "Accessoires :", "Hai pensato agli accessori necessari per il tuo lavoro?", "Lo zoccolo di 60 mm", "La piastra", "Il distanziale da 5 millimetri", "Lo zoccolo HD da 10 mm", "Contattaci", "Consulta il catalogo");
-			var tabResultatD_es = new Array("Colocación de losas", "Mi proyecto", "Anchura", "Longitud", "Altura", "Plots", "Losas", "Accesorios :", "¿Ha pensado en los accesorios necesarios para su trabajo?", "Realce de 60 mm", "Placa para losa", "Separador 5 mm", "Realce HD de 10 mm", "Contacte con nosotros", "Consulte el catálogo");
-			var tabResultatD_de = new Array("Fliesenverlegung", "Mein Projekt", "Breite", "Länge", "Höhe", "Plots", "Fliesen", "Zubehör :", "Haben Sie bei Ihren Arbeiten auch an die erforderlichen Zubehörteile gedacht?", "Aufsatzstück 60 mm", "Plattenfliese", "Abstandhalter 5 mm", "Aufsatzstück HD 10 mm", "Kontaktieren Sie uns", "Schauen Sie im Katalog nach");
+			var tabResultatD_fr = new Array("Pose de dalles", "Mon projet", "Largeur", "Longueur", "Hauteur", "Plots", "Dalles", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "La plaque à dalle", "L'écarteur 5mm", "La rehausse HD 10mm", "Contactez-nous", "Notre catalogue", "L'écarteur 3mm");
+			var tabResultatD_en = new Array("Installing tiles", "My project", "Width", "Length", "Height", "Pedestals", "Tiles", "Accessories :", "Have you thought of the necessary accessories for your work?", "Side extension 60 mm", "Slab plate", "Retractor 5 mm", "side extension HD 10 mm", "Contact Us", "Browse our catalog", "Retractor 3 mm");
+			var tabResultatD_it = new Array("Posa di piastrelle", "Il mio progetto", "Larghezza", "Lunghezza", "Lunghezza", "Plots", "Accessori", "Accessoires :", "Hai pensato agli accessori necessari per il tuo lavoro?", "Lo zoccolo di 60 mm", "La piastra", "Il distanziale da 5 millimetri", "Lo zoccolo HD da 10 mm", "Contattaci", "Consulta il catalogo", "Il distanziale da 3 millimetri");
+			var tabResultatD_es = new Array("Colocación de losas", "Mi proyecto", "Anchura", "Longitud", "Altura", "Plots", "Losas", "Accesorios :", "¿Ha pensado en los accesorios necesarios para su trabajo?", "Realce de 60 mm", "Placa para losa", "Separador 5 mm", "Realce HD de 10 mm", "Contacte con nosotros", "Consulte el catálogo", "Separador 3 mm");
+			var tabResultatD_de = new Array("Fliesenverlegung", "Mein Projekt", "Breite", "Länge", "Höhe", "Plots", "Fliesen", "Zubehör :", "Haben Sie bei Ihren Arbeiten auch an die erforderlichen Zubehörteile gedacht?", "Aufsatzstück 60 mm", "Plattenfliese", "Abstandhalter 5 mm", "Aufsatzstück HD 10 mm", "Kontaktieren Sie uns", "Schauen Sie im Katalog nach", "Abstandhalter 3 mm");
 			
-			var tabResultatL_fr = new Array("Pose de lambourdes", "Mon projet", "Largeur", "Longueur", "Hauteur", "Plots", "Lambourdes", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "La plaque à dalle", "L'écarteur 5mm", "La rehausse HD 10mm", "Contactez-nous", "Notre catalogue");
-			var tabResultatL_en = new Array("Laying the ledger boards", "My project", "Width", "Length", "Height", "Pedestals", "Ledger boards", "Accessories :", "Have you thought of the necessary accessories for your work?", "side extension 60 mm", "Slab plate", "Retractor 5 mm", "side extension HD 10 mm", "Contact Us", "Browse our catalog");
-			var tabResultatL_it = new Array("Posa di legno", "Il mio progetto", "Larghezza", "Lunghezza", "Altezza", "Plots", "Legno", "Accessori :", "Hai pensato agli accessori necessari per il tuo lavoro?", "Lo zoccolo di 60 mm", "La piastra", "Il distanziale da 5 millimetri", "Lo zoccolo HD da 10 mm", "Contattaci", "Consulta il catalogo");
-			var tabResultatL_es = new Array("Colocación de vigas", "Mi proyecto", "Anchura", "Longitud", "Altura", "Plots", "Vigas", "Accesorios :", "¿Ha pensado en los accesorios necesarios para su trabajo?", "Realce de 60 mm", "Placa para losa", "Separador 5 mm", "Realce HD de 10 mm", "Contacte con nosotros", "Consulte el catálogo");
-			var tabResultatL_de = new Array("Montage der Balken", "Mein Projekt", "Breite", "Länge", "Höhe", "Plots", "Balken", "Zubehör :", "Haben Sie bei Ihren Arbeiten auch an die erforderlichen Zubehörteile gedacht?", "Aufsatzstück 60 mm", "Plattenfliese", "Abstandhalter 5 mm", "Aufsatzstück HD 10 mm", "Kontaktieren Sie uns", "Schauen Sie im Katalog nach");
+			var tabResultatL_fr = new Array("Pose de lambourdes", "Mon projet", "Largeur", "Longueur", "Hauteur", "Plots", "Lambourdes", "Accessoires :", "Avez-vous pensé aux accessoires nécessaires à vos travaux ?", "La rehausse 60mm", "HC 2mm", "HC 3mm", "HC 5mm", "Contactez-nous", "Notre catalogue");
+			var tabResultatL_en = new Array("Laying the ledger boards", "My project", "Width", "Length", "Height", "Pedestals", "Ledger boards", "Accessories :", "Have you thought of the necessary accessories for your work?", "side extension 60 mm", "HC 2mm", "HC 3mm", "HC 5mm", "Contact Us", "Browse our catalog");
+			var tabResultatL_it = new Array("Posa di legno", "Il mio progetto", "Larghezza", "Lunghezza", "Altezza", "Plots", "Legno", "Accessori :", "Hai pensato agli accessori necessari per il tuo lavoro?", "Lo zoccolo di 60 mm", "HC 2mm", "HC 3mm", "HC 5mm", "Contattaci", "Consulta il catalogo");
+			var tabResultatL_es = new Array("Colocación de vigas", "Mi proyecto", "Anchura", "Longitud", "Altura", "Plots", "Vigas", "Accesorios :", "¿Ha pensado en los accesorios necesarios para su trabajo?", "Realce de 60 mm", "HC 2mm", "HC 3mm", "HC 5mm", "Contacte con nosotros", "Consulte el catálogo");
+			var tabResultatL_de = new Array("Montage der Balken", "Mein Projekt", "Breite", "Länge", "Höhe", "Plots", "Balken", "Zubehör :", "Haben Sie bei Ihren Arbeiten auch an die erforderlichen Zubehörteile gedacht?", "Aufsatzstück 60 mm", "HC 2mm", "HC 3mm", "HC 5mm", "Kontaktieren Sie uns", "Schauen Sie im Katalog nach");
 			
 			var tabError_fr = new Array("Merci de remplir correctement tous les champs");
 			var tabError_en = new Array("Please complete all fields");
@@ -1378,28 +1378,37 @@
 						</div>
 						
 						<div id="accessoires-ceramique" class="width100" style="display:none;">
-							<div style="width:24%;" class="fleft">
+							<div style="position:absolute; width:100%; height:100%;">
+								<div style="width:25%; height:100%;border-right:1px solid #CCCCCC" class="fleft">
+								</div>
+								<div style="width:25%; height:100%;border-right:1px solid #CCCCCC" class="fleft">
+								</div>
+								<div style="width:25%; height:100%;border-right:1px solid #CCCCCC" class="fleft">
+								</div>
+								<div class="cb"></div>
+							</div>
+							<div style="width:25%;" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/rehausseur.jpg"/></div>
-								<div class="font-din grey size20 no-uppercase tac">La rehausse 60mm<br/><br/></div>
+								<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatD[9]);</script><br/><br/></div>
 								<div class="space10"></div>
 							</div>
-							<div style="width:24%" class="fleft grey-line-left">
+							<div style="width:25%" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/plaque-a-dalle.png"/></div>
-								<div class="font-din grey size20 no-uppercase tac">La plaque à dalle<br/><br/></div>
+								<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatD[10]);</script><br/><br/></div>
 								<div class="space10"></div>
 							</div>
-							<div style="width:24%" class="fleft grey-line-left">
+							<div style="width:25%" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/ecarteur-ceramique.png"/></div>
-								<div class="font-din grey size20 no-uppercase tac">L'écarteur 3mm<br/><br/></div>
+								<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatD[15]);</script><br/><br/></div>
 								<div class="space10"></div>
 							</div>
-							<div style="width:24%" class="fleft grey-line-left">
+							<div style="width:25%" class="fleft">
 								<div class="space10"></div>
 								<div><img class="width100" src="img/rehausse10.png"/></div>
-								<div class="font-din grey size20 no-uppercase tac">La rehausse HD 10mm</div>
+								<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatD[12]);</script></div>
 								<div class="space10"></div>
 							</div>
 							<div class="cb"></div>
@@ -1536,8 +1545,8 @@
 							<div class="grey-line"></div>
 							<div class="fleft width100">
 								<div class="container-accessoire-resultat-text">
-									<div class="font-din-bold orange size34 tac">Accessoires :</div>
-									<div class="font-din grey size28 no-uppercase tac"><br/>Avez-vous pensé aux accessoires nécessaires à vos travaux ?</div>
+									<div class="font-din-bold orange size34 tac"><script>document.write(tabResultatD[7]);</script></div>
+								<div class="font-din grey size28 no-uppercase tac"><br/><script>document.write(tabResultatD[8]);</script></div>
 								</div>
 							</div>
 							<div class="grey-line cb"></div>
@@ -1545,25 +1554,25 @@
 								<div style="width:24%;" class="fleft">
 									<div class="space10"></div>
 									<div><img class="width100" src="img/rehausseur.jpg"/></div>
-									<div class="font-din grey size20 no-uppercase tac">La rehausse 60mm</div>
+									<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatL[9]);</script></div>
 									<div class="space10"></div>
 								</div>
 								<div style="width:24%" class="fleft grey-line-left">
 									<div class="space10"></div>
 									<div><img class="width100" src="img/calehc5.png"/></div>
-									<div class="font-din grey size20 no-uppercase tac">Cale HC 2mm</div>
+									<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatL[10]);</script></div>
 									<div class="space10"></div>
 								</div>
 								<div style="width:24%" class="fleft grey-line-left">
 									<div class="space10"></div>
 									<div><img class="width100" src="img/calehc3.png"/></div>
-									<div class="font-din grey size20 no-uppercase tac">Cale HC 3mm</div>
+									<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatL[11]);</script></div>
 									<div class="space10"></div>
 								</div>
 								<div style="width:24%" class="fleft grey-line-left">
 									<div class="space10"></div>
 									<div><img class="width100" src="img/calehc2.png"/></div>
-									<div class="font-din grey size20 no-uppercase tac">Cale HC 5mm</div>
+									<div class="font-din grey size20 no-uppercase tac"><script>document.write(tabResultatL[12]);</script></div>
 									<div class="space10"></div>
 								</div>
 								<div class="cb"></div>
