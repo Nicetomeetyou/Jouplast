@@ -85,11 +85,11 @@
 
 	<!-- iPad -->
 	<gap:splash src="res/screen/ios/Default-Portrait.png" gap:platform="ios" width="768" height="1024" />
-	<gap:splash src="res/screen/ios/Default-Landscape.png" gap:platform="ios" width="1024" height="768" />
+	<!--<gap:splash src="res/screen/ios/Default-Landscape.png" gap:platform="ios" width="1024" height="768" />-->
 
 	<!-- Retina iPad -->
 	<gap:splash src="res/screen/ios/Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
-	<gap:splash src="res/screen/ios/Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />
+	<!--<gap:splash src="res/screen/ios/Default-Landscape@2x.png" gap:platform="ios" width="2048" height="1536" />-->
 
 	
 	
